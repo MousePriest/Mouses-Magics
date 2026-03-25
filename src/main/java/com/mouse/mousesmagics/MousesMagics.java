@@ -1,7 +1,9 @@
 package com.mouse.mousesmagics;
 
+import com.mouse.mousesmagics.block.ModBlocks;
 import com.mouse.mousesmagics.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Block;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -37,6 +39,7 @@ public class MousesMagics {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -53,6 +56,9 @@ public class MousesMagics {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.FOCUS);
             event.accept(ModItems.BOTTLE_OF_CURSES);
+        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.BLOSSOM_CHALK);
         }
     }
 
