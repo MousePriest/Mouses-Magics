@@ -1,6 +1,7 @@
 package com.mouse.mousesmagics;
 
 import com.mouse.mousesmagics.block.ModBlocks;
+import com.mouse.mousesmagics.item.ModCreativeModeTabs;
 import com.mouse.mousesmagics.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
@@ -38,6 +39,8 @@ public class MousesMagics {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
@@ -53,13 +56,7 @@ public class MousesMagics {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.FOCUS);
-            event.accept(ModItems.BOTTLE_OF_CURSES);
-        }
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.BLOSSOM_CHALK);
-        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
