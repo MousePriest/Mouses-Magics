@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BOTTLE_OF_CURSES);
                         output.accept(ModItems.FOCUS);
                         output.accept(ModBlocks.BLOSSOM_CHALK);
+                        output.accept(ModItems.ICE_LOLLY);
                     }).build());
 
     public static void register(IEventBus eventBus) {

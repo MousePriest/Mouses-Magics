@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "catagory": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:packed_ice"
+    },
+    "B": {
+      "item": "minecraft:stick"
+    },
+    "C": {
+      "item": "minecraft:echo_shard"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ACA",
+    "ABA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mousesmagics:ice_lolly"
+  }
+}
