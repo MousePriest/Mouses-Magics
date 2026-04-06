@@ -19,7 +19,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> BLOSSOM_CHALK = registerBlock("blossom_chalk",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.CORAL_BLOCK)));
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DRIPSTONE_BLOCK)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
