@@ -12,10 +12,13 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MousesMagics.MOD_ID);
 
+    //Dew focus
     public static final DeferredItem<Item> FOCUS = ITEMS.register("focus",
             () -> new Item(new Item.Properties()));
+    //Hex focus
     public static final DeferredItem<Item> BOTTLE_OF_CURSES = ITEMS.register("bottle_of_curses",
             () -> new Item(new Item.Properties()));
+    //Ace reference
     public static final DeferredItem<Item> ICE_LOLLY = ITEMS.register("ice_lolly",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE).food(Foods.CHORUS_FRUIT).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)));
 
