@@ -1,52 +1,43 @@
 package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
-import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
+import com.mouse.mousesmagics.utils.MMTags;
 import io.redspace.ironsspellbooks.api.spells.SchoolType;
+import io.redspace.ironsspellbooks.registries.SoundRegistry;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
-public class MMSchoolRegistry extends SchoolRegistry {
+import static io.redspace.ironsspellbooks.api.registry.SchoolRegistry.SCHOOL_REGISTRY_KEY;
 
-    private static final DeferredRegister<SchoolType> MM_SCHOOLS = DeferredRegister.create(SCHOOL_REGISTRY_KEY, MousesMagics.MOD_ID);
+public class MMSchoolRegistries {
+    private static final DeferredRegister<SchoolType> MOUSES_SCHOOLS = DeferredRegister.create(SCHOOL_REGISTRY_KEY, MousesMagics.MOD_ID);
 
-
-    public static void register(IEventBus eventBus) {
-
-        MM_SCHOOLS.register(eventBus);
+    public static void register(IEventBus eventBus)
+    {
+        MOUSES_SCHOOLS.register(eventBus);
     }
 
-
-    private static Supplier<SchoolType> registerSchool(SchoolType type) {
-        return MM_SCHOOLS.register(type.getId().getPath(), () -> type);
+    private static Supplier<SchoolType> registerSchool(SchoolType type)
+    {
+        return MOUSES_SCHOOLS.register(type.getId().getPath(), () -> type);
     }
 
-
-    @Nullable
-    public static SchoolType getSchoolFromFocus(ItemStack focusStack) {
-        for (SchoolType school : REGISTRY) {
-            if (school.isFocus(focusStack)) {
-                return school;
-            }
-        }
-        return null;
-    }
-
+    //Dew
     public static final ResourceLocation DEW_RESOURCE = ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "dew");
 
-    public static final Supplier<SchoolType> DEW = registerSchool(new SchoolType(
-            ASTRAL_RESOURCE,
-            ASARTags.ASTRAL_FOCUS,
-            Component.translatable("school.mousesmagics.dew").withColor(7231167),
-            ASARAttributeRegistry.ASTRAL_SPELL_POWER,
-            ASARAttributeRegistry.ASTRAL_MAGIC_RESIST,
-            ASARSoundsRegistry.ASTRAL_CAST_IMPACT_LOW,
-            ASARDamageTypes.ASTRAL_MAGIC
-    ));
+    public static final Supplier<SchoolType> DEW = registerSchool(new SchoolType
+            (
+                    DEW_RESOURCE,
+                    MMTags.DEW_FOCUS,
+                    Component.translatable("school.mousesmagics.dew").withStyle(Style.EMPTY.withColor(0x36156c)),
+                    MMAttributeRegistries.DEW_MAGIC_POWER,
+                    MMAttributeRegistries.DEW_MAGIC_RESIST,
+                    SoundRegistry.ENDER_CAST,
+                    MMDamageTypes.DEW_MAGIC
+            ));
 }
