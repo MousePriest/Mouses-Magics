@@ -1,9 +1,11 @@
 package com.mouse.mousesmagics.spells.dew;
 
 import com.mouse.mousesmagics.MousesMagics;
+import com.mouse.mousesmagics.entity.spells.sparkling_weep.SparklingWeepProjectile;
 import com.mouse.mousesmagics.registries.MMSchoolRegistries;
 import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
+import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import io.redspace.ironsspellbooks.api.spells.CastSource;
 import io.redspace.ironsspellbooks.api.spells.CastType;
@@ -14,6 +16,7 @@ import io.redspace.ironsspellbooks.entity.spells.AbstractConeProjectile;
 import io.redspace.ironsspellbooks.entity.spells.cone_of_cold.ConeOfColdProjectile;
 import io.redspace.ironsspellbooks.registries.SoundRegistry;
 import io.redspace.ironsspellbooks.spells.EntityCastData;
+import net.acetheeldritchking.aces_spell_utils.utils.ASUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +24,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.vehicle.Minecart;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,9 +42,9 @@ public class SparklingWeepSpell extends AbstractSpell {
 
     private final DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.COMMON)
-            .setSchoolResource(MMSchoolRegistries.DEW_RESOURCE)
+            .setSchoolResource(SchoolRegistry.ICE_RESOURCE)
             .setMaxLevel(10)
-            .setCooldownSeconds(15)
+            .setCooldownSeconds(12)
             .build();
 
     public SparklingWeepSpell() {
@@ -52,13 +56,19 @@ public class SparklingWeepSpell extends AbstractSpell {
     }
 
     @Override
-    public ResourceLocation getSpellResource() {return spellId;}
+    public CastType getCastType() {
+        return CastType.CONTINUOUS;
+    }
 
     @Override
-    public DefaultConfig getDefaultConfig() {return defaultConfig;}
+    public DefaultConfig getDefaultConfig() {
+        return defaultConfig;
+    }
 
     @Override
-    public CastType getCastType() {return CastType.CONTINUOUS;}
+    public ResourceLocation getSpellResource() {
+        return spellId;
+    }
 
     @Override
     public Optional<SoundEvent> getCastStartSound() {
@@ -67,7 +77,7 @@ public class SparklingWeepSpell extends AbstractSpell {
 
     @Override
     public Optional<SoundEvent> getCastFinishSound() {
-        return Optional.of(SoundRegistry.CONE_OF_COLD_LOOP.get());
+        return Optional.of(SoundRegistry.HOLY_CAST.get());
     }
 
     @Override
@@ -78,11 +88,11 @@ public class SparklingWeepSpell extends AbstractSpell {
                 && entityCastData.getCastingEntity() instanceof AbstractConeProjectile cone) {
             cone.setDealDamageActive();
         } else {
-            ConeOfColdProjectile coneOfColdProjectile = new ConeOfColdProjectile(world, entity);
-            coneOfColdProjectile.setPos(entity.position().add(0, entity.getEyeHeight() * .7, 0));
-            coneOfColdProjectile.setDamage(getDamage(spellLevel, entity));
-            world.addFreshEntity(coneOfColdProjectile);
-            playerMagicData.setAdditionalCastData(new EntityCastData(coneOfColdProjectile));
+            SparklingWeepProjectile sparklingWeepProjectile = new SparklingWeepProjectile(world, entity);
+            sparklingWeepProjectile.setPos(entity.position().add(0, entity.getEyeHeight() * .7, 0));
+            sparklingWeepProjectile.setDamage(getDamage(spellLevel, entity));
+            world.addFreshEntity(sparklingWeepProjectile);
+            playerMagicData.setAdditionalCastData(new EntityCastData(sparklingWeepProjectile));
             super.onCast(world, spellLevel, entity, castSource, playerMagicData);
         }
     }
