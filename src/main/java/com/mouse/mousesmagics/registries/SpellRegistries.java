@@ -1,7 +1,7 @@
 package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
-import com.mouse.mousesmagics.spells.dew.SparklingWeepSpell;
+import com.mouse.mousesmagics.spells.dew.BloomingBurstSpell;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import net.neoforged.bus.api.IEventBus;
@@ -21,8 +21,6 @@ public class SpellRegistries {
     //Key - F = Flowers, P = Puddle, T = Tree, T-location = Targeted location
 
     //Sparkling Weep - Cone spell - F = None.
-    public static final Supplier<AbstractSpell> SPARKLING_WEEP =
-            registerSpell(new SparklingWeepSpell());
 
     //Daisy Chain - Creates a chain on the target that reverses their next spells effects onto themselves, including damage - F = Daisies, where target walks.
 
@@ -47,6 +45,8 @@ public class SpellRegistries {
     //Blossoming Cuts - Low Cd - Create petals at a t-location/target, which will converge inwards dealing damage - F = Basic, low amounts on impact.
 
     //Blossoming Burst - Create an explosion at t-location/target - F = Mixed, heavy amounts.
+    public static final Supplier<AbstractSpell> BLOOMING_BURST_SPELL =
+            registerSpell(new BloomingBurstSpell());
 
     //Sparkling Drips - Slash spell with 3x slashes, boosts life drain of all F hit - F = None.
 
