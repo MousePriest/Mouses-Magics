@@ -4,6 +4,7 @@ import com.mouse.mousesmagics.block.ModBlocks;
 import com.mouse.mousesmagics.item.ModCreativeModeTabs;
 import com.mouse.mousesmagics.item.ModItems;
 import com.mouse.mousesmagics.registries.MMAttributeRegistries;
+import com.mouse.mousesmagics.registries.MMEntityRegistries;
 import com.mouse.mousesmagics.registries.MMSchoolRegistries;
 import com.mouse.mousesmagics.registries.SpellRegistries;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -41,6 +42,8 @@ public class MousesMagics {
         ModItems.register(modEventBus);
 
         MMAttributeRegistries.register(modEventBus);
+
+        MMEntityRegistries.register(modEventBus);
 
         MMSchoolRegistries.register(modEventBus);
 
