@@ -7,6 +7,7 @@ import com.mouse.mousesmagics.registries.MMAttributeRegistries;
 import com.mouse.mousesmagics.registries.MMEntityRegistries;
 import com.mouse.mousesmagics.registries.MMSchoolRegistries;
 import com.mouse.mousesmagics.registries.SpellRegistries;
+import com.mouse.mousesmagics.setup.MMClientSetup;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
 import org.slf4j.Logger;

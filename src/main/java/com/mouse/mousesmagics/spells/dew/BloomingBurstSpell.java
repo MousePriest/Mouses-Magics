@@ -3,39 +3,21 @@ package com.mouse.mousesmagics.spells.dew;
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.entity.spells.BloomBomb;
 import com.mouse.mousesmagics.registries.MMSchoolRegistries;
-import io.redspace.ironsspellbooks.IronsSpellbooks;
 import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
-import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.*;
 import io.redspace.ironsspellbooks.api.util.AnimationHolder;
 import io.redspace.ironsspellbooks.api.util.Utils;
-import io.redspace.ironsspellbooks.capabilities.magic.TargetEntityCastData;
-import io.redspace.ironsspellbooks.entity.spells.ExtendedFireworkRocket;
-import io.redspace.ironsspellbooks.entity.spells.magma_ball.FireBomb;
-import io.redspace.ironsspellbooks.entity.spells.sunbeam.SunbeamEntity;
 import io.redspace.ironsspellbooks.registries.SoundRegistry;
-import it.unimi.dsi.fastutil.ints.IntImmutableList;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.component.FireworkExplosion;
-import net.minecraft.world.item.component.Fireworks;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
-import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
 
 public class BloomingBurstSpell extends AbstractSpell {
     private final ResourceLocation spellId = ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "blooming_burst");
@@ -44,7 +26,6 @@ public class BloomingBurstSpell extends AbstractSpell {
     public List<MutableComponent> getUniqueInfo(int spellLevel, LivingEntity caster) {
         return List.of(
                 Component.translatable("ui.irons_spellbooks.damage", Utils.stringTruncation(getDamage(spellLevel, caster), 2)),
-                Component.translatable("ui.irons_spellbooks.aoe_damage", Utils.stringTruncation(getAoeDamage(spellLevel, caster), 1)),
                 Component.translatable("ui.irons_spellbooks.radius", Utils.stringTruncation(getRadius(spellLevel, caster), 1))
         );
     }
@@ -59,7 +40,7 @@ public class BloomingBurstSpell extends AbstractSpell {
     public BloomingBurstSpell() {
         this.manaCostPerLevel = 5;
         this.baseSpellPower = 8;
-        this.spellPowerPerLevel = 3;
+        this.spellPowerPerLevel = 4;
         this.castTime = 0;
         this.baseManaCost = 30;
     }
@@ -96,7 +77,6 @@ public class BloomingBurstSpell extends AbstractSpell {
         orb.setDeltaMovement(orb.getDeltaMovement().add(0, 0.3, 0));
         orb.setExplosionRadius(getRadius(spellLevel, entity));
         orb.setDamage(getDamage(spellLevel, entity));
-        orb.setAoeDamage(getAoeDamage(spellLevel, entity));
         level.addFreshEntity(orb);
         super.onCast(level, spellLevel, entity, castSource, playerMagicData);
     }
@@ -106,16 +86,12 @@ public class BloomingBurstSpell extends AbstractSpell {
     }
 
     public float getDamage(int spellLevel, LivingEntity caster) {
-        return baseSpellPower * getEntityPowerMultiplier(caster);
-    }
-
-    public float getAoeDamage(int spellLevel, LivingEntity caster) {
-        return 1 + getSpellPower(spellLevel, caster) * .1f;
+        return 10 * getEntityPowerMultiplier(caster);
     }
 
     @Override
-    public AnimationHolder getCastStartAnimation() {
-        return SpellAnimations.ANIMATION_CHARGED_CAST;
+    public AnimationHolder getCastFinishAnimation() {
+        return SpellAnimations.ONE_HANDED_VERTICAL_UPSWING_ANIMATION;
     }
 
 }

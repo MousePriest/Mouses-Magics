@@ -4,7 +4,6 @@ package com.mouse.mousesmagics.registries;
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.entity.spells.BloomBomb;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
-import io.redspace.ironsspellbooks.entity.spells.magma_ball.FireBomb;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
