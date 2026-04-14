@@ -2,6 +2,7 @@ package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.spells.dew.BloomingBurstSpell;
+import com.mouse.mousesmagics.spells.dew.PetalOnTheWindSpell;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import net.neoforged.bus.api.IEventBus;
@@ -37,6 +38,8 @@ public class SpellRegistries {
     //Shining Branches - Creates a T at t-location, grants speed to allies and slowness to enemies - F = Basic, around the T.
 
     //Petal On The Wind - Teleport, grants slow fall - F = Basic, from original location to new location.
+    public static final Supplier<AbstractSpell> PETAL_ON_THE_WIND_SPELL =
+            registerSpell(new PetalOnTheWindSpell());
 
     //Wooden Respite - Grow a T around you or an ally,locking you in place and boosting hp and mana regen - F = Basic, around T.
 
