@@ -82,11 +82,11 @@ public class BloomingBurstSpell extends AbstractSpell {
     }
 
     public float getRadius(int spellLevel, LivingEntity caster) {
-        return 3 + getEntityPowerMultiplier(caster);
+        return 5 + getEntityPowerMultiplier(caster);
     }
 
-    public float getDamage(int spellLevel, LivingEntity caster) {
-        return 10 * getEntityPowerMultiplier(caster);
+    private float getDamage(int spellLevel, LivingEntity entity) {
+        return getSpellPower(spellLevel, entity);
     }
 
     @Override
