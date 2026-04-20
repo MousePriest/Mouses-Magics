@@ -26,7 +26,7 @@ import org.joml.Matrix4f;
 public class BloomBombRenderer extends EntityRenderer<BloomBomb> {
 
     public static final ModelLayerLocation MODEL_LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "bloom_bomb_model"), "main");
-    private static ResourceLocation ORB_TEXTURE = IronsSpellbooks.id("textures/entity/comet/comet.png");
+    private static ResourceLocation ORB_TEXTURE = MousesMagics.namespacePath("textures/item/focus.png");
     private static ResourceLocation SWIRL_TEXTURES[] = {
             IronsSpellbooks.id("textures/entity/acid_orb/swirl_0.png"),
             IronsSpellbooks.id("textures/entity/acid_orb/swirl_1.png"),

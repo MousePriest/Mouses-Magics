@@ -34,10 +34,10 @@ public class MMSchoolRegistries {
             (
                     DEW_RESOURCE,
                     MMTags.DEW_FOCUS,
-                    Component.translatable("school.mousesmagics.dew").withStyle(Style.EMPTY.withColor(0x36156c)),
+                    Component.translatable("school.mousesmagics.dew").withStyle(Style.EMPTY.withColor(0xfdc2e1)),
                     MMAttributeRegistries.DEW_MAGIC_POWER,
                     MMAttributeRegistries.DEW_MAGIC_RESIST,
-                    SoundRegistry.ENDER_CAST,
+                    SoundRegistry.HOLY_CAST,
                     MMDamageTypes.DEW_MAGIC
             ));
 }

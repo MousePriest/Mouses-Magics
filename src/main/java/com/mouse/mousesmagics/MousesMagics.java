@@ -8,8 +8,10 @@ import com.mouse.mousesmagics.registries.MMEntityRegistries;
 import com.mouse.mousesmagics.registries.MMSchoolRegistries;
 import com.mouse.mousesmagics.registries.SpellRegistries;
 import com.mouse.mousesmagics.setup.MMClientSetup;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -52,6 +54,10 @@ public class MousesMagics {
 
         SpellRegistries.register(modEventBus);
 
+    }
+
+    public static ResourceLocation namespacePath(@NotNull String path) {
+        return ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, path);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
