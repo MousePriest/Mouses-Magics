@@ -1,7 +1,7 @@
 package com.mouse.mousesmagics.block;
 
 import com.mouse.mousesmagics.MousesMagics;
-import com.mouse.mousesmagics.item.ModItems;
+import com.mouse.mousesmagics.registries.MMItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -28,7 +28,7 @@ public class ModBlocks {
     }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-    ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    MMItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {

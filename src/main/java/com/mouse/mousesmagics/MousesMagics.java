@@ -1,16 +1,13 @@
 package com.mouse.mousesmagics;
 
 import com.mouse.mousesmagics.block.ModBlocks;
-import com.mouse.mousesmagics.item.ModCreativeModeTabs;
-import com.mouse.mousesmagics.item.ModItems;
+import com.mouse.mousesmagics.registries.MMCreativeModeTabs;
+import com.mouse.mousesmagics.registries.MMItems;
 import com.mouse.mousesmagics.registries.MMAttributeRegistries;
 import com.mouse.mousesmagics.registries.MMEntityRegistries;
 import com.mouse.mousesmagics.registries.MMSchoolRegistries;
 import com.mouse.mousesmagics.registries.SpellRegistries;
-import com.mouse.mousesmagics.setup.MMClientSetup;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
@@ -20,13 +17,11 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 @Mod(MousesMagics.MOD_ID)
@@ -40,9 +35,9 @@ public class MousesMagics {
 
         NeoForge.EVENT_BUS.register(this);
 
-        ModCreativeModeTabs.register(modEventBus);
+        MMCreativeModeTabs.register(modEventBus);
 
-        ModItems.register(modEventBus);
+        MMItems.register(modEventBus);
 
         MMAttributeRegistries.register(modEventBus);
 
