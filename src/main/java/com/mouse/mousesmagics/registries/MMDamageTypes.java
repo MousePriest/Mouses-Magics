@@ -16,7 +16,7 @@ public class MMDamageTypes {
 
     // Magic
     public static final ResourceKey<DamageType> DEW_MAGIC = register("dew_magic");
-    public static final ResourceKey<DamageType> HEX_MAGIC = register("hex_magic");
+    // public static final ResourceKey<DamageType> HEX_MAGIC = register("hex_magic");
 
     public static void bootstrap(BootstrapContext<DamageType> context)
     {

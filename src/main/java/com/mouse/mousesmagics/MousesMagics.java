@@ -1,12 +1,7 @@
 package com.mouse.mousesmagics;
 
 import com.mouse.mousesmagics.block.ModBlocks;
-import com.mouse.mousesmagics.registries.MMCreativeModeTabs;
-import com.mouse.mousesmagics.registries.MMItems;
-import com.mouse.mousesmagics.registries.MMAttributeRegistries;
-import com.mouse.mousesmagics.registries.MMEntityRegistries;
-import com.mouse.mousesmagics.registries.MMSchoolRegistries;
-import com.mouse.mousesmagics.registries.SpellRegistries;
+import com.mouse.mousesmagics.registries.*;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -44,6 +39,8 @@ public class MousesMagics {
         MMEntityRegistries.register(modEventBus);
 
         MMSchoolRegistries.register(modEventBus);
+
+        MMParticleRegistries.register(modEventBus);
 
         ModBlocks.register(modEventBus);
 

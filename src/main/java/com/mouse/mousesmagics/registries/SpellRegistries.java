@@ -18,45 +18,41 @@ public class SpellRegistries {
 
     //-Dew-
 
-    //Key - F = Flowers, P = Puddle, T = Tree, T-location = Targeted location
+    //Sparkling Weep - Cone spell.
 
-    //Sparkling Weep - Cone spell - F = None.
+    //Daisy Chain - Creates a chain on the target that reverses their next spells effects onto themselves, including damage.
 
-    //Daisy Chain - Creates a chain on the target that reverses their next spells effects onto themselves, including damage - F = Daisies, where target walks.
+    //Foxglove Bloom - Chain of slashes ahead of you.
 
-    //Foxglove Bloom - Chain of slashes ahead of you - F = Foxgloves, around you.
+    //Glisten - Modifies some spells, read notes.
 
-    //Glisten - Modifies some spells, read notes - F = None.
+    //Grand Harvest - Slam down a sickle, consuming flowers to give you a defense buff. The more you recast, the higher the effect.
 
-    //Grand Harvest - Slam down a sickle, boosts defence based on flowers hit - F = None.
+    //New Blossoms - Grant 30% of MISSING health and mana.
 
-    //New Blossoms - Grant 30% of MISSING health and mana - F - Basic, around you.
+    //Shining Branches - Creates a T at t-location, grants speed to allies and slowness to enemies.
 
-    //Morning Mist - Consolidates all F, P & T into a garden, boosting effects - F = None.
+    //Petal On The Wind - Teleport, grants slow fall.
 
-    //Shining Branches - Creates a T at t-location, grants speed to allies and slowness to enemies - F = Basic, around the T.
+    //Mantle Of Flowers - Grant a spell power buff.
 
-    //Petal On The Wind - Teleport, grants slow fall - F = Basic, from original location to new location.
+    //Wooden Respite - Grow a T around you or an ally,locking you in place and boosting hp and mana regen.
 
-    //Mantle Of Flowers - Grant a spell power buff - F = None.
+    //Orb Of Chaktre - Create three orbiting orbs.
 
-    //Wooden Respite - Grow a T around you or an ally,locking you in place and boosting hp and mana regen - F = Basic, around T.
+    //Blossoming Cuts - Low Cd - Create petals at a t-location/target, which will converge inwards dealing damage.
 
-    //Orb Of Chaktre - Create three orbiting orbs - F = Basic, around you.
-
-    //Blossoming Cuts - Low Cd - Create petals at a t-location/target, which will converge inwards dealing damage - F = Basic, low amounts on impact.
-
-    //Blossoming Burst - Create an explosion at t-location/target - F = Mixed, heavy amounts.
+    //Blossoming Burst - Create an explosion at t-location/target.
     public static final Supplier<AbstractSpell> BLOOMING_BURST_SPELL =
             registerSpell(new BloomingBurstSpell());
 
-    //Sparkling Drips - Slash spell with 3x slashes, boosts life drain of all F hit - F = None.
+    //Sparkling Drips - Slash spell with 3x slashes.
 
-    //Dew Sigil - Create a sigil at a t-location/target, explodes after delay - F = Foxgloves, at location.
+    //Dew Sigil - Create a sigil at a t-location/target, explodes after delay.
 
-    //Vengeance Of The Petals - Create 3 hydrangea bushes, which call beams on light onto nearby targets - F = Bushes count as F.
+    //Vengeance Of The Petals - Create 3 hydrangea bushes, which call beams on light onto nearby targets.
 
-    //Symphony Of Sorrow - Ult - Consume your garden to call down an orbital strike of dew and petals, creating 1 P - F = None.
+    //Symphony Of Sorrow - Ult - Consumes your garden - BASIC: Call a beam of dew down - WEAVER: Summon a giant web of light between all of your beacons - MISTED: Summons a giant hand formed of mist, and a horde of souls - BLOOMING: Summon a shifting, galactic constellation above your head, then coat everything around you with a defense lowering buff.
 
     //***
 

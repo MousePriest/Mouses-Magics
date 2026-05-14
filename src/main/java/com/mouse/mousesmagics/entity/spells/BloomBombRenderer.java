@@ -26,19 +26,19 @@ import org.joml.Matrix4f;
 public class BloomBombRenderer extends EntityRenderer<BloomBomb> {
 
     public static final ModelLayerLocation MODEL_LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "bloom_bomb_model"), "main");
-    private static ResourceLocation ORB_TEXTURE = MousesMagics.namespacePath("textures/item/focus.png");
+    private static ResourceLocation ORB_TEXTURE = MousesMagics.namespacePath("textures/item/bloomcore.png");
     private static ResourceLocation SWIRL_TEXTURES[] = {
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_0.png"),
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_1.png"),
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_2.png"),
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_3.png"),
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_4.png"),
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_5.png"),
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_6.png"),
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_7.png"),
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_8.png"),
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_9.png"),
-            IronsSpellbooks.id("textures/entity/acid_orb/swirl_10.png")
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
     };
     private final ModelPart orb;
     private final ModelPart swirl;
@@ -54,7 +54,7 @@ public class BloomBombRenderer extends EntityRenderer<BloomBomb> {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
         partdefinition.addOrReplaceChild("orb", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F), PartPose.ZERO);
-        partdefinition.addOrReplaceChild("swirl", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("swirl", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -4.0F, -4.0F, 9.0F, 9.0F, 9.0F), PartPose.ZERO);
         return LayerDefinition.create(meshdefinition, 8, 8);
     }
 

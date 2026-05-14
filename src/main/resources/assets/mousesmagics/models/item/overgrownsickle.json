@@ -134,8 +134,5 @@
         0.5
       ]
     }
-  },
-  "textures": {
-    "particle": "mousesmagics:item/sickletexture"
   }
 }

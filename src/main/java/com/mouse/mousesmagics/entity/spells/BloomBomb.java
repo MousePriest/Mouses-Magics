@@ -1,12 +1,16 @@
 package com.mouse.mousesmagics.entity.spells;
 
 import com.mouse.mousesmagics.registries.MMEntityRegistries;
+import com.mouse.mousesmagics.registries.MMParticleRegistries;
 import com.mouse.mousesmagics.registries.SpellRegistries;
+import com.mouse.mousesmagics.utils.MMParticleHelper;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.damage.DamageSources;
 import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
+import io.redspace.ironsspellbooks.util.ParticleHelper;
 import net.minecraft.core.Holder;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
@@ -40,13 +44,13 @@ public class BloomBomb extends AbstractMagicProjectile {
         double d2 = this.getZ() - vec3.z;
         for (int i = 0; i < 4; i++) {
             Vec3 random = Utils.getRandomVec3(.2);
-            this.level().addParticle(ParticleTypes.CHERRY_LEAVES, d0 - random.x, d1 + 0.5D - random.y, d2 - random.z, random.x * .5f, random.y * .5f, random.z * .5f);
+            level().addParticle(MMParticleHelper.FLOWER, vec3.x, vec3.y, vec3.z, 0, 0, 0);
         }
     }
 
     @Override
     public void impactParticles(double x, double y, double z) {
-        MagicManager.spawnParticles(level(), ParticleTypes.CHERRY_LEAVES, x, y, z, 30, 1.5, .1, 1.5, 1, false);
+        MagicManager.spawnParticles(level(), MMParticleHelper.FLOWER, x, y, z, 30, 1.5, .1, 1.5, 1, false);
     }
 
     @Override

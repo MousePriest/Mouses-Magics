@@ -7,9 +7,9 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 
 public class MMStaffTiers implements IronsWeaponTier {
 
-    //v.1 Sickle
+    //Dew Staffs
     public static MMStaffTiers OVERGROWN_SICKLE = new MMStaffTiers(3, -3,
-            new AttributeContainer(MMAttributeRegistries.DEW_MAGIC_POWER, 0.15f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(MMAttributeRegistries.DEW_MAGIC_POWER, 0.15f,AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     float damage;
     float speed;
@@ -36,6 +36,4 @@ public class MMStaffTiers implements IronsWeaponTier {
     public AttributeContainer[] getAdditionalAttributes() {
         return this.attributeContainers;
     }
-
-
 }
