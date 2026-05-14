@@ -31,15 +31,12 @@ public class OvergrownSickle extends StaffItem implements GeoItem {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        //controllerRegistrar.add(animationController);
     }
 
-    // Animations and stuff
     private static final RawAnimation IDLE_ANIMATION = RawAnimation.begin().thenLoop("idle");
 
     private final AnimationController<OvergrownSickle> animationController = new AnimationController<>(this, "controller", 0, this::predicate);
 
-    // Make your animations in this predicate
     private PlayState predicate(AnimationState<OvergrownSickle> event)
     {
         event.getController().setAnimation(IDLE_ANIMATION);
@@ -52,7 +49,6 @@ public class OvergrownSickle extends StaffItem implements GeoItem {
         return cache;
     }
 
-    // Your renderer for items
     @Override
     public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
         consumer.accept(new GeoRenderProvider() {
