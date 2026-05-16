@@ -3,19 +3,28 @@ package com.mouse.mousesmagics.item.staffs.overgrown_sickle;
 import com.mouse.mousesmagics.item.staffs.MMStaffTiers;
 import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
 import io.redspace.ironsspellbooks.item.weapons.StaffItem;
+import io.redspace.ironsspellbooks.registries.SoundRegistry;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.acetheeldritchking.aces_spell_utils.utils.ASRarities;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.client.GeoRenderProvider;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
+import java.util.List;
 import java.util.function.Consumer;
 
-public class OvergrownSickle extends StaffItem implements GeoItem {
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+public class OvergrownSickle extends StaffItem {
 
     public OvergrownSickle() {
         super(
@@ -30,38 +39,50 @@ public class OvergrownSickle extends StaffItem implements GeoItem {
     }
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-    }
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        boolean result = super.hurtEnemy(stack, target, attacker);
 
-    private static final RawAnimation IDLE_ANIMATION = RawAnimation.begin().thenLoop("idle");
+        if (!attacker.level().isClientSide) {
+            boolean isCrit = false;
 
-    private final AnimationController<OvergrownSickle> animationController = new AnimationController<>(this, "controller", 0, this::predicate);
-
-    private PlayState predicate(AnimationState<OvergrownSickle> event)
-    {
-        event.getController().setAnimation(IDLE_ANIMATION);
-
-        return PlayState.CONTINUE;
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
-    }
-
-    @Override
-    public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
-        consumer.accept(new GeoRenderProvider() {
-            private OvergrownSickleRenderer renderer;
-
-            @Override
-            public BlockEntityWithoutLevelRenderer getGeoItemRenderer() {
-                if (this.renderer == null)
-                    this.renderer = new OvergrownSickleRenderer();
-
-                return this.renderer;
+            if (attacker instanceof Player player) {
+                isCrit =
+                        player.fallDistance > 0.0F &&
+                                !player.onGround() &&
+                                !player.isInWater() &&
+                                !player.hasEffect(net.minecraft.world.effect.MobEffects.BLINDNESS) &&
+                                !player.isPassenger() &&
+                                !player.isSprinting() &&
+                                player.getMainHandItem() == stack;
             }
-        });
+
+            if (isCrit) {
+                attacker.level().playSound(
+                        null,
+                        target.getX(),
+                        target.getY(),
+                        target.getZ(),
+                        SoundRegistry.SOULCALLER_TOLL_SUCCESS,
+                        SoundSource.PLAYERS,
+                        0.5f,
+                        1.0f
+                );
+            }
+        }
+
+        return result;
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack stack,
+                                @NotNull TooltipContext context,
+                                @NotNull List<Component> lines,
+                                @NotNull TooltipFlag flag) {
+        super.appendHoverText(stack, context, lines, flag);
+
+        // Custom item description section
+        lines.add(Component.translatable("item.mousesmagics.overgrownsickle.description")
+                .withStyle(Style.EMPTY.withColor(15881518).withItalic(true)));
     }
 }
 

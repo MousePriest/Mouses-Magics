@@ -1,7 +1,9 @@
 package com.mouse.mousesmagics;
 
 import com.mouse.mousesmagics.block.ModBlocks;
+import com.mouse.mousesmagics.item.staffs.overgrown_sickle.OvergrownSickleRenderer;
 import com.mouse.mousesmagics.registries.*;
+import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -67,6 +69,9 @@ public class MousesMagics {
     static class ClientModEvents {
         @SubscribeEvent
         static void onClientSetup(FMLClientSetupEvent event) {
+
+            //Staves
+            AzItemRendererRegistry.register(OvergrownSickleRenderer::new, MMItems.OVERGROWN_SICKLE.get());
 
         }
     }
