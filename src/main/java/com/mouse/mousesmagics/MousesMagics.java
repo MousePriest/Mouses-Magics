@@ -1,6 +1,7 @@
 package com.mouse.mousesmagics;
 
 import com.mouse.mousesmagics.block.ModBlocks;
+import com.mouse.mousesmagics.item.staffs.ceremonial_dagger.Ceremonial_DaggerRenderer;
 import com.mouse.mousesmagics.item.staffs.overgrown_sickle.OvergrownSickleRenderer;
 import com.mouse.mousesmagics.registries.*;
 import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
@@ -65,14 +66,16 @@ public class MousesMagics {
 
     }
 
-    @EventBusSubscriber(modid = MousesMagics.MOD_ID, value = Dist.CLIENT)
-    static class ClientModEvents {
+    @EventBusSubscriber(value = Dist.CLIENT)
+    public static class ClientModEvents
+    {
         @SubscribeEvent
-        static void onClientSetup(FMLClientSetupEvent event) {
+        public static void onClientSetup(FMLClientSetupEvent event)
+        {
 
             //Staves
             AzItemRendererRegistry.register(OvergrownSickleRenderer::new, MMItems.OVERGROWN_SICKLE.get());
-
+            AzItemRendererRegistry.register(Ceremonial_DaggerRenderer::new, MMItems.CEREMONIAL_DAGGER.get());
         }
     }
 }

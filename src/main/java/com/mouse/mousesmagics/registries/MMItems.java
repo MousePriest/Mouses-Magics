@@ -22,7 +22,7 @@ public class MMItems {
     public static final DeferredItem<Item> FOCUS = ITEMS.register("focus",
             () -> new Item(new Item.Properties()));
     //Dew staffs
-    public static final DeferredHolder<Item, Item> OVERGROWN_SICKLE = ITEMS.register("overgrown_sickle", () ->
+    public static final DeferredHolder<Item, Item> OVERGROWN_SICKLE = ITEMS.register("overgrownsickle", () ->
             new StaffItem(ItemPropertiesHelper.equipment(1).attributes(ExtendedSwordItem.createAttributes(MMStaffTiers.OVERGROWN_SICKLE))));
     //Dew books
     public static final DeferredHolder<Item, Item> GARDENING_GUIDE = ITEMS.register
@@ -31,6 +31,10 @@ public class MMItems {
     //Hex focus
     public static final DeferredItem<Item> BOTTLE_OF_CURSES = ITEMS.register("bottle_of_curses",
             () -> new Item(new Item.Properties()));
+    //Hex staff
+    public static final DeferredHolder<Item, Item> CEREMONIAL_DAGGER = ITEMS.register("ceremonial_dagger", () ->
+            new StaffItem(ItemPropertiesHelper.equipment(1).attributes(ExtendedSwordItem.createAttributes(MMStaffTiers.CEREMONIAL_DAGGER))));
+
     //Ace reference
     public static final DeferredItem<Item> ICE_LOLLY = ITEMS.register("ice_lolly",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE).food(Foods.CHORUS_FRUIT).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)));

@@ -4,9 +4,12 @@
   "item.mousesmagics.focus": "Fragile Drop",
   "item.mousesmagics.bottle_of_curses": "Bottle of Curses",
   "item.mousesmagics.ice_lolly": "Eldritch Ice Lolly",
-  "item.mousesmagics.overgrown_sickle": "Overgrown Sickle",
+  "item.mousesmagics.overgrownsickle": "Overgrown Sickle",
+  "item.mousesmagics.gardening_guide": "Gardening Guide",
 
   "block.mousesmagics.blossom_chalk": "Blossom Chalk",
 
-  "attribute.mousesmagics.dew_spell_power": "Dew Spell Power"
+  "attribute.mousesmagics.dew_spell_power": "Dew Spell Power",
+
+  "spell.mousesmagics.blooming_burst": "Blossoming Burst"
 }

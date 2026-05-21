@@ -18,8 +18,8 @@ public class MMAttributeRegistries {
     public static final DeferredHolder<Attribute, Attribute> DEW_MAGIC_RESIST = registerResistanceAttribute("dew");
     public static final DeferredHolder<Attribute, Attribute> DEW_MAGIC_POWER = registerPowerAttribute("dew");
 
-    // public static final DeferredHolder<Attribute, Attribute> HEX_MAGIC_RESIST = registerResistanceAttribute("hex");
-    // public static final DeferredHolder<Attribute, Attribute> HEX_MAGIC_POWER = registerPowerAttribute("hex");
+    public static final DeferredHolder<Attribute, Attribute> HEX_MAGIC_RESIST = registerResistanceAttribute("hex");
+    public static final DeferredHolder<Attribute, Attribute> HEX_MAGIC_POWER = registerPowerAttribute("hex");
 
     public static void register(IEventBus eventBus)
     {

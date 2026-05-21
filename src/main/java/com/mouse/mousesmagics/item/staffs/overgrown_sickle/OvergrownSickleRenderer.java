@@ -9,15 +9,8 @@ import software.bernie.geckolib.renderer.GeoItemRenderer;
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
 public class OvergrownSickleRenderer extends AzItemRenderer {
-    private static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath(
-            MousesMagics.MOD_ID,
-            "geo/overgrownsickle.geo.json"
-    );
-
-    private static final ResourceLocation TEX = ResourceLocation.fromNamespaceAndPath(
-            MousesMagics.MOD_ID,
-            "textures/item/sickletexture.png"
-    );
+    private static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "geo/overgrownsickle.geo.json");
+    private static final ResourceLocation TEX = ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "textures/item/overgrownsickle.png");
 
     public OvergrownSickleRenderer() {
         super(

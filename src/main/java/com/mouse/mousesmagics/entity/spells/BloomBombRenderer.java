@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.mouse.mousesmagics.MousesMagics;
-import io.redspace.ironsspellbooks.IronsSpellbooks;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -28,17 +27,17 @@ public class BloomBombRenderer extends EntityRenderer<BloomBomb> {
     public static final ModelLayerLocation MODEL_LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "bloom_bomb_model"), "main");
     private static ResourceLocation ORB_TEXTURE = MousesMagics.namespacePath("textures/item/bloomcore.png");
     private static ResourceLocation SWIRL_TEXTURES[] = {
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
-            MousesMagics.namespacePath("textures/item/bloomswirl.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
+            MousesMagics.namespacePath("textures/item/focus.png"),
     };
     private final ModelPart orb;
     private final ModelPart swirl;

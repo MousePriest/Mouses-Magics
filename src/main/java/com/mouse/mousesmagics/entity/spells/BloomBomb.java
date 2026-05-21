@@ -44,7 +44,7 @@ public class BloomBomb extends AbstractMagicProjectile {
         double d2 = this.getZ() - vec3.z;
         for (int i = 0; i < 4; i++) {
             Vec3 random = Utils.getRandomVec3(.2);
-            level().addParticle(MMParticleHelper.FLOWER, vec3.x, vec3.y, vec3.z, 0, 0, 0);
+            level().addParticle(ParticleHelper.FIREFLY, vec3.x, vec3.y, vec3.z, 0, 0, 0);
         }
     }
 
@@ -55,7 +55,7 @@ public class BloomBomb extends AbstractMagicProjectile {
 
     @Override
     public float getSpeed() {
-        return .65f;
+        return .200f;
     }
 
     @Override

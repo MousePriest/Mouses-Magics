@@ -61,20 +61,15 @@ public class BloomingBurstSpell extends AbstractSpell {
     }
 
     @Override
-    public Optional<SoundEvent> getCastStartSound() {
-        return Optional.of(SoundRegistry.FIRE_BOMB_CHARGE.get());
-    }
-
-    @Override
     public Optional<SoundEvent> getCastFinishSound() {return Optional.of(SoundRegistry.ROOT_EMERGE.get());
     }
 
     @Override
     public void onCast(Level level, int spellLevel, LivingEntity entity, CastSource castSource, MagicData playerMagicData) {
         BloomBomb orb = new BloomBomb(level, entity);
-        orb.setPos(entity.position().add(0, entity.getEyeHeight() - orb.getBoundingBox().getYsize() * .5f, 0).add(entity.getForward()));
+        orb.setPos(entity.position().add(0, entity.getEyeHeight() - orb.getBoundingBox().getYsize() * .4f, 0).add(entity.getForward()));
         orb.shoot(entity.getLookAngle());
-        orb.setDeltaMovement(orb.getDeltaMovement().add(0, 0.3, 0));
+        orb.setDeltaMovement(orb.getDeltaMovement().add(0, 0.5, 0));
         orb.setExplosionRadius(getRadius(spellLevel, entity));
         orb.setDamage(getDamage(spellLevel, entity));
         level.addFreshEntity(orb);

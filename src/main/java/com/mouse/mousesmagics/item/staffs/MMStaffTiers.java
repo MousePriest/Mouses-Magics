@@ -11,6 +11,10 @@ public class MMStaffTiers implements IronsWeaponTier {
     public static MMStaffTiers OVERGROWN_SICKLE = new MMStaffTiers(3, -3,
             new AttributeContainer(MMAttributeRegistries.DEW_MAGIC_POWER, 0.15f,AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
+    //Hex Staffs
+    public static MMStaffTiers CEREMONIAL_DAGGER = new MMStaffTiers(3, -3,
+            new AttributeContainer(MMAttributeRegistries.HEX_MAGIC_POWER, 0.15f,AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
     float damage;
     float speed;
     AttributeContainer[] attributeContainers;

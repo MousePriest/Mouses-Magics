@@ -1,4 +1,4 @@
-package com.mouse.mousesmagics.item.staffs.overgrown_sickle;
+package com.mouse.mousesmagics.item.staffs.ceremonial_dagger;
 
 import com.mouse.mousesmagics.item.staffs.MMStaffTiers;
 import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
@@ -12,16 +12,16 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class OvergrownSickle extends StaffItem {
+public class Ceremonial_Dagger extends StaffItem {
 
-    public OvergrownSickle() {
+    public Ceremonial_Dagger() {
         super(
                 ItemPropertiesHelper
                         .equipment(1)
                         .fireResistant()
-                        .rarity(ASRarities.COSMIC_RARITY_PROXY.getValue())
+                        .rarity(ASRarities.FORBIDDEN_RARITY_PROXY.getValue())
                         .attributes(ExtendedSwordItem
-                                .createAttributes(MMStaffTiers.OVERGROWN_SICKLE)
+                                .createAttributes(MMStaffTiers.CEREMONIAL_DAGGER)
                         )
         );
     }
