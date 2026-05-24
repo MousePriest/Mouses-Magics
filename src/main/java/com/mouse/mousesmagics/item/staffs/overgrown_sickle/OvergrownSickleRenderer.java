@@ -15,7 +15,6 @@ public class OvergrownSickleRenderer extends AzItemRenderer {
     public OvergrownSickleRenderer() {
         super(
                 AzItemRendererConfig.builder(GEO, TEX)
-                        .addRenderLayer(new AzAutoGlowingLayer<>())
                         .build()
         );
     }

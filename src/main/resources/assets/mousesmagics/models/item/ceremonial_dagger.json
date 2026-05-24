@@ -42,14 +42,14 @@
     },
     "firstperson_righthand": {
       "rotation": [
-        -126.25,
+        19,
         -81.5,
         20.25
       ],
       "translation": [
         0,
-        9,
-        5
+        1.75,
+        2
       ],
       "scale": [
         0.5,
@@ -59,14 +59,14 @@
     },
     "firstperson_lefthand": {
       "rotation": [
-        -126.25,
+        19,
         -81.5,
         20.25
       ],
       "translation": [
         0,
-        9,
-        5
+        1.75,
+        2
       ],
       "scale": [
         0.5,
@@ -82,27 +82,32 @@
       ]
     },
     "gui": {
-      "translation": [
+      "rotation": [
         0,
+        0,
+        -45.75
+      ],
+      "translation": [
+        -5.25,
         -5,
         0
       ],
       "scale": [
-        0.5,
-        0.5,
-        0.5
+        0.75,
+        0.75,
+        0.75
       ]
     },
     "head": {
       "rotation": [
-        -20.88,
+        -20.88000000000011,
         56.25,
-        121.52
+        121.51999999999998
       ],
       "translation": [
-        2.5,
-        -9.75,
-        -8
+        8,
+        1.5,
+        -12
       ],
       "scale": [
         0.5,
@@ -124,6 +129,6 @@
     }
   },
   "textures": {
-    "particle": "mousesmagics:item/ceremonial_dagger.png"
+    "particle": "mousesmagics:item/ceremonial_dagger"
   }
 }

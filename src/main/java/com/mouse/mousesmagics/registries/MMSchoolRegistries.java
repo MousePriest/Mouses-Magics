@@ -40,4 +40,32 @@ public class MMSchoolRegistries {
                     SoundRegistry.HOLY_CAST,
                     MMDamageTypes.DEW_MAGIC
             ));
+
+    //Hex
+    public static final ResourceLocation HEX_RESOURCE = ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "hex");
+
+    public static final Supplier<SchoolType> HEX = registerSchool(new SchoolType
+            (
+                    HEX_RESOURCE,
+                    MMTags.HEX_FOCUS,
+                    Component.translatable("school.mousesmagics.hex").withStyle(Style.EMPTY.withColor(0xfdc2e1)),
+                    MMAttributeRegistries.HEX_MAGIC_POWER,
+                    MMAttributeRegistries.HEX_MAGIC_RESIST,
+                    SoundRegistry.ELDRITCH_BLAST,
+                    MMDamageTypes.HEX_MAGIC
+            ));
+
+    //Crystal
+    public static final ResourceLocation CRYSTAL_RESOURCE = ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "crystal");
+
+    public static final Supplier<SchoolType> CRYSTAL = registerSchool(new SchoolType
+            (
+                    CRYSTAL_RESOURCE,
+                    MMTags.CRYSTAL_FOCUS,
+                    Component.translatable("school.mousesmagics.crystal").withStyle(Style.EMPTY.withColor(0xfdc2e1)),
+                    MMAttributeRegistries.CRYSTAL_MAGIC_POWER,
+                    MMAttributeRegistries.CRYSTAL_MAGIC_RESIST,
+                    SoundRegistry.ICE_IMPACT,
+                    MMDamageTypes.CRYSTAL_MAGIC
+            ));
 }

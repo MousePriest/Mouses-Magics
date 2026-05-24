@@ -21,6 +21,9 @@ public class MMAttributeRegistries {
     public static final DeferredHolder<Attribute, Attribute> HEX_MAGIC_RESIST = registerResistanceAttribute("hex");
     public static final DeferredHolder<Attribute, Attribute> HEX_MAGIC_POWER = registerPowerAttribute("hex");
 
+    public static final DeferredHolder<Attribute, Attribute> CRYSTAL_MAGIC_RESIST = registerResistanceAttribute("crystal");
+    public static final DeferredHolder<Attribute, Attribute> CRYSTAL_MAGIC_POWER = registerPowerAttribute("crystal");
+
     public static void register(IEventBus eventBus)
     {
         ATTRIBUTES.register(eventBus);

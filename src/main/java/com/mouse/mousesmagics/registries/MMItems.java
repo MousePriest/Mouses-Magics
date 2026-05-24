@@ -31,9 +31,13 @@ public class MMItems {
     //Hex focus
     public static final DeferredItem<Item> BOTTLE_OF_CURSES = ITEMS.register("bottle_of_curses",
             () -> new Item(new Item.Properties()));
-    //Hex staff
+    //Hex staffs
     public static final DeferredHolder<Item, Item> CEREMONIAL_DAGGER = ITEMS.register("ceremonial_dagger", () ->
             new StaffItem(ItemPropertiesHelper.equipment(1).attributes(ExtendedSwordItem.createAttributes(MMStaffTiers.CEREMONIAL_DAGGER))));
+
+    //Hex staffs
+    public static final DeferredHolder<Item, Item> CRYSTAL_WRENCH = ITEMS.register("crystal_wrench", () ->
+            new StaffItem(ItemPropertiesHelper.equipment(1).attributes(ExtendedSwordItem.createAttributes(MMStaffTiers.CRYSTAL_WRENCH))));
 
     //Ace reference
     public static final DeferredItem<Item> ICE_LOLLY = ITEMS.register("ice_lolly",

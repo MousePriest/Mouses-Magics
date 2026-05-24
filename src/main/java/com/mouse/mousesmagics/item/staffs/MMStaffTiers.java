@@ -15,6 +15,10 @@ public class MMStaffTiers implements IronsWeaponTier {
     public static MMStaffTiers CEREMONIAL_DAGGER = new MMStaffTiers(3, -3,
             new AttributeContainer(MMAttributeRegistries.HEX_MAGIC_POWER, 0.15f,AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
+    //Crystal Staffs
+    public static MMStaffTiers CRYSTAL_WRENCH = new MMStaffTiers(3, -3,
+            new AttributeContainer(MMAttributeRegistries.CRYSTAL_MAGIC_POWER, 0.15f,AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
     float damage;
     float speed;
     AttributeContainer[] attributeContainers;

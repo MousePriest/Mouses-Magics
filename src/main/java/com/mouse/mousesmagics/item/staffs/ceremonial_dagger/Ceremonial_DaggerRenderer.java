@@ -13,7 +13,6 @@ public class Ceremonial_DaggerRenderer extends AzItemRenderer {
     public Ceremonial_DaggerRenderer() {
         super(
                 AzItemRendererConfig.builder(GEO, TEX)
-                        .addRenderLayer(new AzAutoGlowingLayer<>())
                         .build()
         );
     }
