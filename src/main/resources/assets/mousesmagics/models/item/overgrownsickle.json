@@ -7,135 +7,81 @@
   ],
   "display": {
     "thirdperson_righthand": {
-      "rotation": [
-        -41.4699999999998,
-        -88.98999999999978,
-        -43.190000000000055
-      ],
       "translation": [
-        0.25,
         0,
+        -5,
         0
-      ],
-      "scale": [
-        0.3,
-        0.3,
-        0.3
       ]
     },
     "thirdperson_lefthand": {
-      "rotation": [
-        -13.42,
-        89.56,
-        17.32
-      ],
       "translation": [
-        -0.5,
         0,
+        -5,
         0
-      ],
-      "scale": [
-        0.3,
-        0.3,
-        0.3
       ]
     },
     "firstperson_righthand": {
       "rotation": [
-        -6,
-        -54,
+        9.5,
+        0,
         0
       ],
       "translation": [
-        5.5,
-        -1,
-        -7.75
-      ],
-      "scale": [
-        0.6,
-        0.6,
-        0.6
+        2.75,
+        -5.25,
+        -4.5
       ]
     },
     "firstperson_lefthand": {
       "rotation": [
-        168.28,
-        48.53,
-        -174.29
+        9.5,
+        0,
+        0
       ],
       "translation": [
-        5.5,
-        -1,
-        -7.75
-      ],
-      "scale": [
-        0.6,
-        0.6,
-        0.6
-      ]
-    },
-    "ground": {
-      "scale": [
-        0.5,
-        0.5,
-        0.5
+        2.75,
+        -5.25,
+        -4.5
       ]
     },
     "gui": {
       "rotation": [
-        179.48,
-        -5,
-        -133.26
+        -90,
+        -44.5,
+        -90
       ],
       "translation": [
-        -1.25,
-        -2,
+        -4.25,
+        -4.5,
         0
-      ],
-      "scale": [
-        0.5,
-        0.5,
-        0.5
       ]
     },
     "head": {
       "rotation": [
+        -61.5,
         0,
-        0,
-        152
-      ],
-      "translation": [
-        -1.75,
-        13.75,
         0
       ],
-      "scale": [
-        0.5,
-        0.5,
-        0.5
+      "translation": [
+        0,
+        3.25,
+        -5.25
       ]
     },
     "fixed": {
-      "translation": [
+      "rotation": [
         0,
-        -11.5,
-        -0.5
+        90,
+        0
       ],
-      "scale": [
-        0.5,
-        0.5,
-        0.5
-      ]
-    },
-    "on_shelf": {
-      "scale": [
-        0.5,
-        0.5,
-        0.5
+      "translation": [
+        -1.75,
+        -5.25,
+        -0.5
       ]
     }
   },
   "textures": {
-    "particle": "mousesmagics:item/sickletexture"
+    "particle": "mousesmagics:item/overgrown_sickle"
   }
 }

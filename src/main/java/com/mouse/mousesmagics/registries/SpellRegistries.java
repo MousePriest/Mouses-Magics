@@ -1,7 +1,9 @@
 package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
-import com.mouse.mousesmagics.spells.dew.BloomingBurstSpell;
+import com.mouse.mousesmagics.spells.dew.BlossomingCutsSpell;
+import com.mouse.mousesmagics.spells.dew.SparklingDanceSpell;
+import com.mouse.mousesmagics.spells.fire.PhoenixRebirthSpell;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import net.neoforged.bus.api.IEventBus;
@@ -18,7 +20,9 @@ public class SpellRegistries {
 
     //-Dew-
 
-    //Sparkling Weep - Cone spell.
+    //Mantle Of Flowers - Parry. Consumes flowers to heal if you
+
+    //Sparkling Weep - Cone spell which stays where you place it.
 
     //Daisy Chain - Creates a chain on the target that reverses their next spells effects onto themselves, including damage.
 
@@ -36,17 +40,17 @@ public class SpellRegistries {
 
     //Mantle Of Flowers - Grant a spell power buff.
 
-    //Wooden Respite - Grow a T around you or an ally,locking you in place and boosting hp and mana regen.
+    //Wooden Respite - Grow a tree around you or an ally,locking you in place and boosting hp and mana regen.
 
     //Orb Of Chaktre - Create three orbiting orbs.
 
-    //Blossoming Cuts - Low Cd - Create petals at a t-location/target, which will converge inwards dealing damage.
+    //Blossoming Cuts - Low Cd - MAKES THE NEXT SPELL DEAL MORE DAMAGE, SCALES WITH FLOWERS.
+    public static final Supplier<AbstractSpell> BLOSSOMING_CUTS = registerSpell(new BlossomingCutsSpell());
 
     //Blossoming Burst - Create an explosion at t-location/target.
-    public static final Supplier<AbstractSpell> BLOOMING_BURST_SPELL =
-            registerSpell(new BloomingBurstSpell());
 
-    //Sparkling Drips - Slash spell with 3x slashes.
+    //Sparkling Dance - Slash spell with 3x slashes.
+    public static final Supplier<AbstractSpell> SPARKLING_DANCE = registerSpell(new SparklingDanceSpell());
 
     //Dew Sigil - Create a sigil at a t-location/target, explodes after delay.
 
@@ -57,6 +61,13 @@ public class SpellRegistries {
     //***
 
     //Hex (Can't be arsed rn)
+
+    //***
+
+    //Fire
+
+    //Phoenix Rebirth - Heal based on missing health.
+    public static final Supplier<AbstractSpell> PHOENIX_REBIRTH = registerSpell(new PhoenixRebirthSpell());
 
     public static void register(IEventBus eventBus) { SPELLS.register(eventBus); }
 

@@ -5,6 +5,7 @@ import com.mouse.mousesmagics.item.staffs.ceremonial_dagger.Ceremonial_DaggerRen
 import com.mouse.mousesmagics.item.staffs.crystal_wrench.Crystal_WrenchRenderer;
 import com.mouse.mousesmagics.item.staffs.overgrown_sickle.OvergrownSickleRenderer;
 import com.mouse.mousesmagics.registries.*;
+import mod.azure.azurelib.common.animation.cache.AzIdentityRegistry;
 import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
@@ -56,16 +57,11 @@ public class MousesMagics {
         return ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, path);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
-
-    }
-
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
-    {
+    {}
 
-    }
+    private void commonSetup(final FMLCommonSetupEvent event) {}
 
     @EventBusSubscriber(value = Dist.CLIENT)
     public static class ClientModEvents

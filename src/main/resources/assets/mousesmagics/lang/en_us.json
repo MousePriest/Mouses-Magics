@@ -6,10 +6,19 @@
   "item.mousesmagics.ice_lolly": "Eldritch Ice Lolly",
   "item.mousesmagics.overgrownsickle": "Overgrown Sickle",
   "item.mousesmagics.gardening_guide": "Gardening Guide",
+  "item.mousesmagics.ceremonial_dagger": "Ceremonial Dagger",
+  "item.mousesmagics.crystal_wrench": "Crystal Wrench",
 
   "block.mousesmagics.blossom_chalk": "Blossom Chalk",
 
   "attribute.mousesmagics.dew_spell_power": "Dew Spell Power",
+  "attribute.mousesmagics.hex_spell_power": "Hex Spell Power",
+  "attribute.mousesmagics.crystal_spell_power": "Crystal Spell Power",
 
-  "spell.mousesmagics.blooming_burst": "Blossoming Burst"
+  "spell.mousesmagics.sparkling_dance": "Sparkling Dance",
+  "spell.mousesmagics.blossoming_cuts": "Blossoming Cuts",
+
+  "school.mousesmagics.dew": "Dew",
+
+  "ui.mousesmagics.damage": "Damage"
 }

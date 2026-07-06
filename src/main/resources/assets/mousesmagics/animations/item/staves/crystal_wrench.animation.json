@@ -1,0 +1,38 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"crystal_wrench_idle": {
+			"loop": true,
+			"animation_length": 8,
+			"bones": {
+				"crystal": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.875": {
+							"vector": [-145, 0, 0]
+						},
+						"5.1667": {
+							"vector": [-226.67, 0, 0]
+						},
+						"8.0": {
+							"vector": [-358.43, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.0": {
+							"vector": [0, 0.5, 0]
+						},
+						"8.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}
