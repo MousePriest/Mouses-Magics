@@ -59,7 +59,7 @@ public class PhoenixRebirthSpell extends AbstractSpell {
     @Override
     public void onCast(Level world, int spellLevel, LivingEntity entity, CastSource castSource, MagicData playerMagicData)
     {
-        float healAmount = getSpellPower(spellLevel, entity);
+        float healAmount = entity.getMaxHealth() * entity.getHealth();
         NeoForge.EVENT_BUS.post(new SpellHealEvent(entity, entity, healAmount, getSchoolType()));
         entity.heal(healAmount);
         int count = 16;

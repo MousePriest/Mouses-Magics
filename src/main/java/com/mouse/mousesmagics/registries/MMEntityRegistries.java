@@ -1,9 +1,8 @@
 package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
-import com.mouse.mousesmagics.entity.spells.blossomingcuts.BlossomingCutsProjectile;
+import com.mouse.mousesmagics.entity.spells.defenestration.DefenestrationProjectile;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
-import io.redspace.ironsspellbooks.entity.spells.firebolt.FireboltProjectile;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -19,9 +18,9 @@ public class MMEntityRegistries {
         ENTITIES.register(eventBus);
     }
 
-    public static final DeferredHolder<EntityType<?>, EntityType<BlossomingCutsProjectile>> BLOSSOMING_CUTS_PROJECTILE =
-            ENTITIES.register("firebolt", () -> EntityType.Builder.<BlossomingCutsProjectile>of(BlossomingCutsProjectile::new, MobCategory.MISC)
+    public static final DeferredHolder<EntityType<?>, EntityType<DefenestrationProjectile>> DEFENESTRATION_PROJECTILE =
+            ENTITIES.register("defenestration", () -> EntityType.Builder.<DefenestrationProjectile>of(DefenestrationProjectile::new, MobCategory.MISC)
                     .sized(.5f, .5f)
                     .clientTrackingRange(64)
-                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "firebolt").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "defenestration").toString()));
 }

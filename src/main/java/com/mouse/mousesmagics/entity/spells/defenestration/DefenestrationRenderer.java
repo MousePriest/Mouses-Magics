@@ -1,11 +1,10 @@
-package com.mouse.mousesmagics.entity.spells.blossomingcuts;
+package com.mouse.mousesmagics.entity.spells.defenestration;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.mouse.mousesmagics.MousesMagics;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -15,16 +14,16 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 import javax.annotation.Nullable;
 
-public class BlossomingCutsRenderer extends GeoEntityRenderer<BlossomingCutsProjectile> {
-    private static final ResourceLocation TEXTURE = MousesMagics.namespacePath("textures/entity/blossoming_cuts.png");
+public class DefenestrationRenderer extends GeoEntityRenderer<DefenestrationProjectile> {
+    private static final ResourceLocation TEXTURE = MousesMagics.namespacePath("textures/entity/defenestration_texture.png");
 
-    public BlossomingCutsRenderer(EntityRendererProvider.Context context) {
-        super(context, new BlossomingCutsModel());
+    public DefenestrationRenderer(EntityRendererProvider.Context context) {
+        super(context, new DefenestrationModel());
         this.shadowRadius = 0f;
     }
 
     @Override
-    public void preRender(PoseStack poseStack, BlossomingCutsProjectile animatable, BakedGeoModel model,
+    public void preRender(PoseStack poseStack, DefenestrationProjectile animatable, BakedGeoModel model,
                           @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer,
                           boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour) {
 
@@ -40,13 +39,7 @@ public class BlossomingCutsRenderer extends GeoEntityRenderer<BlossomingCutsProj
     }
 
     @Override
-    public RenderType getRenderType(BlossomingCutsProjectile animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) {
-        return RenderType.energySwirl(texture, 0, 0);
-    }
-
-    @Override
-    public ResourceLocation getTextureLocation(BlossomingCutsProjectile entity) {
+    public ResourceLocation getTextureLocation(DefenestrationProjectile entity) {
         return TEXTURE;
     }
 }
-

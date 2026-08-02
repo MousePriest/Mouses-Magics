@@ -1,8 +1,8 @@
 package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
-import com.mouse.mousesmagics.spells.dew.BlossomingCutsSpell;
-import com.mouse.mousesmagics.spells.dew.SparklingDanceSpell;
+import com.mouse.mousesmagics.spells.dew.BlissSpell;
+import com.mouse.mousesmagics.spells.evocation.defenestration.DefenestrationSpell;
 import com.mouse.mousesmagics.spells.fire.PhoenixRebirthSpell;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
@@ -20,54 +20,30 @@ public class SpellRegistries {
 
     //-Dew-
 
-    //Mantle Of Flowers - Parry. Consumes flowers to heal if you
+    //Petal - Low Cooldown - Shoot a petal which boosts the amount of flowers you get for a bit.
 
-    //Sparkling Weep - Cone spell which stays where you place it.
+    //Bliss - Long Cast - Grant people near you Calm. Calm lowers mana regen for boosted health regen, movement speed, and lower cooldowns + gravity.
+    public static final Supplier<AbstractSpell> BLISS = registerSpell(new BlissSpell());
 
-    //Daisy Chain - Creates a chain on the target that reverses their next spells effects onto themselves, including damage.
-
-    //Foxglove Bloom - Chain of slashes ahead of you.
-
-    //Glisten - Modifies some spells, read notes.
-
-    //Grand Harvest - Slam down a sickle, consuming flowers to give you a defense buff. The more you recast, the higher the effect.
-
-    //New Blossoms - Grant 30% of MISSING health and mana.
-
-    //Shining Branches - Creates a T at t-location, grants speed to allies and slowness to enemies.
-
-    //Petal On The Wind - Teleport, grants slow fall.
-
-    //Mantle Of Flowers - Grant a spell power buff.
-
-    //Wooden Respite - Grow a tree around you or an ally,locking you in place and boosting hp and mana regen.
-
-    //Orb Of Chaktre - Create three orbiting orbs.
-
-    //Blossoming Cuts - Low Cd - MAKES THE NEXT SPELL DEAL MORE DAMAGE, SCALES WITH FLOWERS.
-    public static final Supplier<AbstractSpell> BLOSSOMING_CUTS = registerSpell(new BlossomingCutsSpell());
-
-    //Blossoming Burst - Create an explosion at t-location/target.
-
-    //Sparkling Dance - Slash spell with 3x slashes.
-    public static final Supplier<AbstractSpell> SPARKLING_DANCE = registerSpell(new SparklingDanceSpell());
-
-    //Dew Sigil - Create a sigil at a t-location/target, explodes after delay.
-
-    //Vengeance Of The Petals - Create 3 hydrangea bushes, which call beams on light onto nearby targets.
-
-    //Symphony Of Sorrow - Ult - Consumes your garden - BASIC: Call a beam of dew down - WEAVER: Summon a giant web of light between all of your beacons - MISTED: Summons a giant hand formed of mist, and a horde of souls - BLOOMING: Summon a shifting, galactic constellation above your head, then coat everything around you with a defense lowering buff.
+    //Symphony Of Sorrow - Ult - Consumes your garden - BASIC: Call a beam of dew down - WEAVER: Summon a giant web of light between all of your beacons - MISTED: Summons a giant hand formed of mist, and a horde of souls - BLOOMING: Summon a shifting, galactic constellation of petals above your head, then coat everything around you with a defense lowering buff.
 
     //***
 
-    //Hex (Can't be arsed rn)
+    //-Hex- (Can't be arsed rn)
 
     //***
 
-    //Fire
+    //-Fire-
 
     //Phoenix Rebirth - Heal based on missing health.
     public static final Supplier<AbstractSpell> PHOENIX_REBIRTH = registerSpell(new PhoenixRebirthSpell());
+
+    //***
+
+    //-Evocation-
+
+    //Defenestration
+    public static final Supplier<AbstractSpell> DEFENESTRATION = registerSpell(new DefenestrationSpell());
 
     public static void register(IEventBus eventBus) { SPELLS.register(eventBus); }
 

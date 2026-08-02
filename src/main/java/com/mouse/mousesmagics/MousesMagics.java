@@ -50,7 +50,6 @@ public class MousesMagics {
         ModBlocks.register(modEventBus);
 
         SpellRegistries.register(modEventBus);
-
     }
 
     public static ResourceLocation namespacePath(@NotNull String path) {
