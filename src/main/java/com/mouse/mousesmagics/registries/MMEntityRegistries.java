@@ -2,6 +2,8 @@ package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.entity.spells.defenestration.DefenestrationProjectile;
+import com.mouse.mousesmagics.entity.spells.dew_burst.DewBurstProjectile;
+import com.mouse.mousesmagics.entity.spells.petal.PetalProjectile;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -23,4 +25,17 @@ public class MMEntityRegistries {
                     .sized(.5f, .5f)
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "defenestration").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<PetalProjectile>> PETAL_PROJECTILE =
+            ENTITIES.register("petal", () -> EntityType.Builder.<PetalProjectile>of(PetalProjectile::new, MobCategory.MISC)
+                    .sized(.5f, .5f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "petal").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<DewBurstProjectile>> DEW_BURST_PROJECTILE =
+            ENTITIES.register("dew_burst", () -> EntityType.Builder.<DewBurstProjectile>of(DewBurstProjectile::new, MobCategory.MISC)
+                    .sized(.5f, .5f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "dew_burst").toString()));
+
 }

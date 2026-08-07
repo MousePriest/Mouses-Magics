@@ -41,6 +41,8 @@ public class MousesMagics {
 
         MMAttributeRegistries.register(modEventBus);
 
+        MMEffectRegisteries.register(modEventBus);
+
         MMEntityRegistries.register(modEventBus);
 
         MMSchoolRegistries.register(modEventBus);

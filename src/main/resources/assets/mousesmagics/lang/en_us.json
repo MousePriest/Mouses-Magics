@@ -15,7 +15,5 @@
   "attribute.mousesmagics.hex_spell_power": "Hex Spell Power",
   "attribute.mousesmagics.crystal_spell_power": "Crystal Spell Power",
 
-  "school.mousesmagics.dew": "Dew",
-
-  "ui.mousesmagics.damage": "Damage"
+  "school.mousesmagics.dew": "Dew"
 }
