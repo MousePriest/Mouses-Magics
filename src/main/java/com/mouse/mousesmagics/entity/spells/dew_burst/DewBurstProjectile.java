@@ -67,7 +67,7 @@ public class DewBurstProjectile extends AbstractMagicProjectile implements GeoEn
     }
 
     public float getSpeed() {
-        return 4F;
+        return 20F;
     }
 
 

@@ -5,6 +5,7 @@ import com.mouse.mousesmagics.entity.spells.defenestration.DefenestrationRendere
 import com.mouse.mousesmagics.entity.spells.dew_burst.DewBurstRenderer;
 import com.mouse.mousesmagics.entity.spells.petal.PetalRenderer;
 import com.mouse.mousesmagics.registries.MMEntityRegistries;
+import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -18,5 +19,6 @@ public class MMClientSetup {
         event.registerEntityRenderer(MMEntityRegistries.DEFENESTRATION_PROJECTILE.get(), DefenestrationRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.PETAL_PROJECTILE.get(), PetalRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.DEW_BURST_PROJECTILE.get(), DewBurstRenderer::new);
+        event.registerEntityRenderer(MMEntityRegistries.FLOWER_FIELD.get(), NoopRenderer::new);
     }
 }

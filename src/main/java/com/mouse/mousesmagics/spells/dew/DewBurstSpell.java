@@ -87,10 +87,10 @@ public class DewBurstSpell extends AbstractSpell {
     }
 
     public float getDamage(int spellLevel, LivingEntity caster) {
-        return 5 + 5 * getSpellPower(spellLevel, caster);
+        return 5 + 2 * getSpellPower(spellLevel, caster);
     }
 
     public int getRadius(int spellLevel, LivingEntity caster) {
-        return 2 + (int) getSpellPower(spellLevel, caster);
+        return 3;
     }
 }

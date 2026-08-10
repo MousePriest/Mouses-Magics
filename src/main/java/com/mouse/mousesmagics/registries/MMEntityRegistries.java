@@ -3,8 +3,10 @@ package com.mouse.mousesmagics.registries;
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.entity.spells.defenestration.DefenestrationProjectile;
 import com.mouse.mousesmagics.entity.spells.dew_burst.DewBurstProjectile;
+import com.mouse.mousesmagics.entity.spells.dew_burst.FlowerField;
 import com.mouse.mousesmagics.entity.spells.petal.PetalProjectile;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
+import io.redspace.ironsspellbooks.entity.spells.magma_ball.FireField;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -37,5 +39,12 @@ public class MMEntityRegistries {
                     .sized(.5f, .5f)
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "dew_burst").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<FlowerField>> FLOWER_FIELD =
+            ENTITIES.register("flower_field", () -> EntityType.Builder.<FlowerField>of(FlowerField::new, MobCategory.MISC)
+                    .sized(4f, 1.2f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "flower_field").toString()));
+
 
 }
