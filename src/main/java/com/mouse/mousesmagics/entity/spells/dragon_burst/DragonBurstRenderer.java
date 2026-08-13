@@ -1,11 +1,9 @@
-package com.mouse.mousesmagics.entity.spells.dew_burst;
+package com.mouse.mousesmagics.entity.spells.dragon_burst;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.mouse.mousesmagics.MousesMagics;
-import com.mouse.mousesmagics.entity.spells.petal.PetalModel;
-import com.mouse.mousesmagics.entity.spells.petal.PetalProjectile;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -16,16 +14,16 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 import javax.annotation.Nullable;
 
-public class DewBurstRenderer extends GeoEntityRenderer<DewBurstProjectile> {
-    private static final ResourceLocation TEXTURE = MousesMagics.namespacePath("textures/entity/dew_burst.png");
+public class DragonBurstRenderer extends GeoEntityRenderer<DragonBurstProjectile> {
+    private static final ResourceLocation TEXTURE = MousesMagics.namespacePath("textures/entity/dragon_burst.png");
 
-    public DewBurstRenderer(EntityRendererProvider.Context context) {
-        super(context, new DewBurstModel());
+    public DragonBurstRenderer(EntityRendererProvider.Context context) {
+        super(context, new DragonBurstModel());
         this.shadowRadius = 0f;
     }
 
     @Override
-    public void preRender(PoseStack poseStack, DewBurstProjectile animatable, BakedGeoModel model,
+    public void preRender(PoseStack poseStack, DragonBurstProjectile animatable, BakedGeoModel model,
                           @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer,
                           boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour) {
 
@@ -41,7 +39,7 @@ public class DewBurstRenderer extends GeoEntityRenderer<DewBurstProjectile> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(DewBurstProjectile entity) {
+    public ResourceLocation getTextureLocation(DragonBurstProjectile entity) {
         return TEXTURE;
     }
 }

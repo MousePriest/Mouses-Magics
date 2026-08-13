@@ -2,7 +2,8 @@ package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.spells.dew.BlissSpell;
-import com.mouse.mousesmagics.spells.dew.DewBurstSpell;
+import com.mouse.mousesmagics.spells.dew.DewArrowSpell;
+import com.mouse.mousesmagics.spells.ender.DragonBurstSpell;
 import com.mouse.mousesmagics.spells.dew.PetalSpell;
 import com.mouse.mousesmagics.spells.evocation.defenestration.DefenestrationSpell;
 import com.mouse.mousesmagics.spells.fire.PhoenixRebirthSpell;
@@ -25,11 +26,11 @@ public class SpellRegistries {
     //Petal - Low Cooldown - Shoot a petal which boosts the amount of flowers you get for a bit.
     public static final Supplier<AbstractSpell> PETAL = registerSpell(new PetalSpell());
 
-    //Dew Burst - Long Cast - Shoot a ball of dew which explodes into a DoT area.
-    public static final Supplier<AbstractSpell> DEW_BURST = registerSpell(new DewBurstSpell());
-
     //Bliss - Long Cast - Grants you Calm. Calm lowers mana regen for boosted health regen, movement speed, and lower cooldowns + gravity.
     public static final Supplier<AbstractSpell> BLISS = registerSpell(new BlissSpell());
+
+    //Dew Arrow
+    public static final Supplier<AbstractSpell> DEW_ARROW = registerSpell(new DewArrowSpell());
 
     //Symphony Of Sorrow - Ult - Consumes your garden - BASIC: Call a beam of dew down - WEAVER: Summon a giant web of light between all of your beacons - MISTED: Summons a giant hand formed of mist, and a horde of souls - BLOOMING: Summon a shifting, galactic constellation of petals above your head, then coat everything around you with a defense lowering buff.
 
@@ -50,6 +51,13 @@ public class SpellRegistries {
 
     //Defenestration
     public static final Supplier<AbstractSpell> DEFENESTRATION = registerSpell(new DefenestrationSpell());
+
+    //***
+
+    //-Ender-
+
+    //Dragon Burst
+    public static final Supplier<AbstractSpell> DRAGON_BURST = registerSpell(new DragonBurstSpell());
 
     public static void register(IEventBus eventBus) { SPELLS.register(eventBus); }
 

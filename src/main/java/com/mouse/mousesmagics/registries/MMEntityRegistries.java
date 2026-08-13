@@ -2,11 +2,10 @@ package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.entity.spells.defenestration.DefenestrationProjectile;
-import com.mouse.mousesmagics.entity.spells.dew_burst.DewBurstProjectile;
-import com.mouse.mousesmagics.entity.spells.dew_burst.FlowerField;
+import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonBurstProjectile;
+import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonField;
 import com.mouse.mousesmagics.entity.spells.petal.PetalProjectile;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
-import io.redspace.ironsspellbooks.entity.spells.magma_ball.FireField;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -34,17 +33,15 @@ public class MMEntityRegistries {
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "petal").toString()));
 
-    public static final DeferredHolder<EntityType<?>, EntityType<DewBurstProjectile>> DEW_BURST_PROJECTILE =
-            ENTITIES.register("dew_burst", () -> EntityType.Builder.<DewBurstProjectile>of(DewBurstProjectile::new, MobCategory.MISC)
+    public static final DeferredHolder<EntityType<?>, EntityType<DragonBurstProjectile>> DRAGON_BURST_PROJECTILE =
+            ENTITIES.register("dragon_burst_projectile", () -> EntityType.Builder.<DragonBurstProjectile>of(DragonBurstProjectile::new, MobCategory.MISC)
                     .sized(.5f, .5f)
                     .clientTrackingRange(64)
-                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "dew_burst").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "dragon_burst_projectile").toString()));
 
-    public static final DeferredHolder<EntityType<?>, EntityType<FlowerField>> FLOWER_FIELD =
-            ENTITIES.register("flower_field", () -> EntityType.Builder.<FlowerField>of(FlowerField::new, MobCategory.MISC)
+    public static final DeferredHolder<EntityType<?>, EntityType<DragonField>> DRAGON_FIELD =
+            ENTITIES.register("dragon_field", () -> EntityType.Builder.<DragonField>of(DragonField::new, MobCategory.MISC)
                     .sized(4f, 1.2f)
                     .clientTrackingRange(64)
-                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "flower_field").toString()));
-
-
+                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "dragon_field").toString()));
 }
