@@ -1,7 +1,6 @@
 package com.mouse.mousesmagics.item.staffs.crystal_wrench;
 
 import com.mouse.mousesmagics.item.staffs.MMStaffTiers;
-import com.mouse.mousesmagics.utils.animations.MMDispatcher;
 import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
 import io.redspace.ironsspellbooks.item.weapons.StaffItem;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
@@ -18,7 +17,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class Crystal_Wrench extends StaffItem {
-    public final MMDispatcher dispatcher;
 
     public Crystal_Wrench() {
         super(ItemPropertiesHelper
@@ -29,15 +27,6 @@ public class Crystal_Wrench extends StaffItem {
                                 .createAttributes(MMStaffTiers.CRYSTAL_WRENCH)
                         )
         );
-        this.dispatcher = new MMDispatcher();
-    }
-
-    @Override
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        if (!level.isClientSide && entity instanceof Player player )
-        {
-            dispatcher.idle(player, stack);
-        }
     }
 
     @Override

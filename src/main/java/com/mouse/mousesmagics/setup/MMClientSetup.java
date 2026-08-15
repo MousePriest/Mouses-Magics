@@ -6,7 +6,9 @@ import com.mouse.mousesmagics.entity.spells.dew_arrow.DewArrowRenderer;
 import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonBurstRenderer;
 import com.mouse.mousesmagics.entity.spells.floral_spear.FloralSpearRenderer;
 import com.mouse.mousesmagics.entity.spells.petal.PetalRenderer;
+import com.mouse.mousesmagics.particle.FadingFlowerParticle;
 import com.mouse.mousesmagics.registries.MMEntityRegistries;
+import com.mouse.mousesmagics.registries.MMParticleRegistries;
 import com.mouse.mousesmagics.render.MMChargeSpellLayer;
 import io.redspace.ironsspellbooks.render.SpellTargetingLayer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -19,6 +21,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 import java.util.Map;
 
@@ -53,5 +56,10 @@ public class MMClientSetup {
         event.registerEntityRenderer(MMEntityRegistries.DEW_ARROW_PROJECTILE.get(), DewArrowRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.DRAGON_BURST_PROJECTILE.get(), DragonBurstRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.DRAGON_FIELD.get(), NoopRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerParticles(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(MMParticleRegistries.FADING_FLOWER_PARTICLE.get(), FadingFlowerParticle.Provider::new);
     }
 }

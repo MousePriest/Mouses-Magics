@@ -2,6 +2,7 @@ package com.mouse.mousesmagics.entity.spells.floral_spear;
 
 import com.mouse.mousesmagics.registries.MMEntityRegistries;
 import com.mouse.mousesmagics.registries.SpellRegistries;
+import com.mouse.mousesmagics.utils.MMParticleHelper;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.damage.DamageSources;
@@ -12,6 +13,8 @@ import io.redspace.ironsspellbooks.util.ParticleHelper;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -29,18 +32,18 @@ public class FloralSpearProjectile extends AbstractMagicProjectile {
     @Override
     public void trailParticles() {
         Vec3 vec3 = this.position().subtract(getDeltaMovement());
-        level().addParticle(ParticleHelper.ELECTRICITY, vec3.x, vec3.y, vec3.z, 0, 0, 0);
+        level().addParticle(MMParticleHelper.FADING_FLOWER, vec3.x, vec3.y, vec3.z, 0, 0, 0);
     }
 
     @Override
     public void impactParticles(double x, double y, double z) {
-        MagicManager.spawnParticles(level(), ParticleHelper.ELECTRICITY, x, y, z, 75, .1, .1, .1, 2, true);
-        MagicManager.spawnParticles(level(), ParticleHelper.ELECTRICITY, x, y, z, 75, .1, .1, .1, .5, false);
+        MagicManager.spawnParticles(level(), MMParticleHelper.FADING_FLOWER, x, y, z, 75, .1, .1, .1, 2, true);
+        MagicManager.spawnParticles(level(), MMParticleHelper.FADING_FLOWER, x, y, z, 75, .1, .1, .1, .5, false);
     }
 
     @Override
     public float getSpeed() {
-        return 0.1f;
+        return 3f;
     }
 
     @Override
@@ -65,7 +68,9 @@ public class FloralSpearProjectile extends AbstractMagicProjectile {
 
     @Override
     protected void onHitEntity(@NotNull EntityHitResult entityHitResult) {
-        DamageSources.applyDamage(entityHitResult.getEntity(), damage, SpellRegistries.FLORAL_SPEAR.get().getDamageSource(this, getOwner()));
+        var entity = entityHitResult.getEntity();
+        if (DamageSources.applyDamage(entity, damage, SpellRegistries.FLORAL_SPEAR.get().getDamageSource(this, getOwner())) && entity instanceof LivingEntity livingEntity)
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 60, 0, false, false, true));
     }
 
     @Override
