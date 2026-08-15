@@ -2,8 +2,10 @@ package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.entity.spells.defenestration.DefenestrationProjectile;
+import com.mouse.mousesmagics.entity.spells.dew_arrow.DewArrowProjectile;
 import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonBurstProjectile;
 import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonField;
+import com.mouse.mousesmagics.entity.spells.floral_spear.FloralSpearProjectile;
 import com.mouse.mousesmagics.entity.spells.petal.PetalProjectile;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
 import net.minecraft.core.registries.Registries;
@@ -33,6 +35,12 @@ public class MMEntityRegistries {
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "petal").toString()));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<DewArrowProjectile>> DEW_ARROW_PROJECTILE =
+            ENTITIES.register("dew_arrow", () -> EntityType.Builder.<DewArrowProjectile>of(DewArrowProjectile::new, MobCategory.MISC)
+                    .sized(.5f, .5f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "dew_arrow").toString()));
+
     public static final DeferredHolder<EntityType<?>, EntityType<DragonBurstProjectile>> DRAGON_BURST_PROJECTILE =
             ENTITIES.register("dragon_burst_projectile", () -> EntityType.Builder.<DragonBurstProjectile>of(DragonBurstProjectile::new, MobCategory.MISC)
                     .sized(.5f, .5f)
@@ -44,4 +52,10 @@ public class MMEntityRegistries {
                     .sized(4f, 1.2f)
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "dragon_field").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<FloralSpearProjectile>> FLORAL_SPEAR_PROJECTILE =
+            ENTITIES.register("floral_spear_projectile", () -> EntityType.Builder.<FloralSpearProjectile>of(FloralSpearProjectile::new, MobCategory.MISC)
+                    .sized(.5f, .5f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "floral_spear_projectile").toString()));
 }

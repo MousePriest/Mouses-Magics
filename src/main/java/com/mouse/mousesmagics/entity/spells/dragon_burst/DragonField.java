@@ -46,7 +46,7 @@ public class DragonField extends AoeEntity {
         if (tickCount > getDelay()) {
             if (!level().isClientSide) {
                 if (tickCount > duration + getDelay()) {
-                    MagicManager.spawnParticles(level(), ParticleTypes.DRAGON_BREATH, getX(), getY() + 0.06, getZ(), 200, getRadius() * .7f, .2f, getRadius() * .7f, 0.2f, true);
+                    MagicManager.spawnParticles(level(), ParticleHelper.ENDER_SPARKS, getX(), getY() + 0.06, getZ(), 200, getRadius() * .7f, .2f, getRadius() * .7f, 0.2f, true);
                     discard();
                     return;
                 }
@@ -83,6 +83,6 @@ public class DragonField extends AoeEntity {
 
     @Override
     public Optional<ParticleOptions> getParticle() {
-        return Optional.of(ParticleTypes.DRAGON_BREATH);
+        return Optional.of(ParticleHelper.ENDER_SPARKS);
     }
 }

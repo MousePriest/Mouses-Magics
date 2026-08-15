@@ -9,6 +9,7 @@ import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.damage.DamageSources;
 import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
 import io.redspace.ironsspellbooks.registries.EntityRegistry;
+import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import io.redspace.ironsspellbooks.registries.SoundRegistry;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
 import net.minecraft.core.BlockPos;
@@ -17,6 +18,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -50,21 +52,11 @@ public class DewArrowProjectile extends AbstractMagicProjectile {
     }
 
     @Override
-    public void trailParticles() {
-        var vec = getDeltaMovement();
-        var length = vec.length();
-        int count = (int) Math.min(20, Math.round(length) * 2) + 1;
-        float f = (float) length / count;
-        for (int i = 0; i < count; i++) {
-            Vec3 random = Utils.getRandomVec3(0.025);
-            Vec3 p = vec.scale(f * i);
-            level().addParticle(ParticleTypes.SNOWFLAKE, this.getX() + random.x + p.x, this.getY() + random.y + p.y, this.getZ() + random.z + p.z, random.x, random.y, random.z);
-        }
-    }
+    public void trailParticles() {}
 
     @Override
     public void impactParticles(double x, double y, double z) {
-        MagicManager.spawnParticles(level(), ParticleTypes.SNOWFLAKE, x, y, z, 10, .1, .1, .1, .4, false);
+        MagicManager.spawnParticles(level(), ParticleTypes.SNOWFLAKE, x, y, z, 20, .1, .1, .1, 0.1, false);
     }
 
     @Override
@@ -91,7 +83,9 @@ public class DewArrowProjectile extends AbstractMagicProjectile {
     @Override
     protected void onHitEntity(@NotNull EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
-        DamageSources.applyDamage(entityHitResult.getEntity(), damage, SpellRegistries.DEW_ARROW.get().getDamageSource(this, getOwner()));
+        var entity = entityHitResult.getEntity();
+        if (DamageSources.applyDamage(entity, damage, SpellRegistries.DEW_ARROW.get().getDamageSource(this, getOwner())) && entity instanceof LivingEntity livingEntity)
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 60, 0, false, false, false));
         pierceOrDiscard();
     }
 

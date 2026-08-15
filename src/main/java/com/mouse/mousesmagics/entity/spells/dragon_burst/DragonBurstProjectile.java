@@ -46,11 +46,20 @@ public class DragonBurstProjectile extends AbstractMagicProjectile implements Ge
 
     @Override
     public void trailParticles() {
+        var vec = getDeltaMovement();
+        var length = vec.length();
+        int count = (int) Math.min(20, Math.round(length) * 3) + 1;
+        float f = (float) length / count;
+        for (int i = 0; i < count; i++) {
+            Vec3 random = Utils.getRandomVec3(0.02);
+            Vec3 p = vec.scale(f * i);
+            level().addParticle(ParticleHelper.ENDER_SPARKS, this.getX() + random.x + p.x, this.getY() + random.y + p.y, this.getZ() + random.z + p.z, random.x, random.y, random.z);
+        }
     }
 
 
     public void impactParticles(double x, double y, double z) {
-        MagicManager.spawnParticles(level(), ParticleTypes.DRAGON_BREATH, getX(), getY() + 0.06, getZ(), 200, getRadius() * .7f, .2f, getRadius() * .7f, 0.2f, true);
+        MagicManager.spawnParticles(level(), ParticleHelper.ENDER_SPARKS, getX(), getY() + 0.06, getZ(), 200, getRadius() * .7f, .2f, getRadius() * .7f, 0.2f, true);
     }
 
     public float getSpeed() {

@@ -3,6 +3,7 @@ package com.mouse.mousesmagics.registries;
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.spells.dew.BlissSpell;
 import com.mouse.mousesmagics.spells.dew.DewArrowSpell;
+import com.mouse.mousesmagics.spells.dew.FloralSpearSpell;
 import com.mouse.mousesmagics.spells.ender.DragonBurstSpell;
 import com.mouse.mousesmagics.spells.dew.PetalSpell;
 import com.mouse.mousesmagics.spells.evocation.defenestration.DefenestrationSpell;
@@ -28,6 +29,9 @@ public class SpellRegistries {
 
     //Bliss - Long Cast - Grants you Calm. Calm lowers mana regen for boosted health regen, movement speed, and lower cooldowns + gravity.
     public static final Supplier<AbstractSpell> BLISS = registerSpell(new BlissSpell());
+
+    //Floral Spear
+    public static final Supplier<AbstractSpell> FLORAL_SPEAR = registerSpell(new FloralSpearSpell());
 
     //Dew Arrow
     public static final Supplier<AbstractSpell> DEW_ARROW = registerSpell(new DewArrowSpell());
