@@ -30,15 +30,14 @@ import java.util.Optional;
 public class FloralSpearProjectile extends AbstractMagicProjectile {
 
     @Override
-    public void trailParticles() {
-        Vec3 vec3 = this.position().subtract(getDeltaMovement());
-        level().addParticle(MMParticleHelper.FADING_FLOWER, vec3.x, vec3.y, vec3.z, 0, 0, 0);
-    }
+    public void trailParticles() {}
 
     @Override
     public void impactParticles(double x, double y, double z) {
-        MagicManager.spawnParticles(level(), MMParticleHelper.FADING_FLOWER, x, y, z, 75, .1, .1, .1, 2, true);
-        MagicManager.spawnParticles(level(), MMParticleHelper.FADING_FLOWER, x, y, z, 75, .1, .1, .1, .5, false);
+        MagicManager.spawnParticles(level(), MMParticleHelper.FADING_FLOWER, x, y, z, 75, .1, .1, .1, 1.8, true);
+        MagicManager.spawnParticles(level(), MMParticleHelper.FADING_FLOWER, x, y, z, 75, .1, .1, .1, .4, false);
+        MagicManager.spawnParticles(level(), MMParticleHelper.FLOWER, x, y, z, 75, .1, .1, .1, 2, true);
+        MagicManager.spawnParticles(level(), MMParticleHelper.FLOWER, x, y, z, 75, .1, .1, .1, .5, false);
     }
 
     @Override

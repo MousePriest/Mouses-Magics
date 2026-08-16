@@ -8,10 +8,10 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
-public class FadingFlowerParticle extends TextureSheetParticle {
+public class FlowerParticle extends TextureSheetParticle {
     private final SpriteSet sprites;
 
-    public FadingFlowerParticle(ClientLevel level, double xCoord, double yCoord, double zCoord, SpriteSet spriteSet, double xd, double yd, double zd) {
+    public FlowerParticle(ClientLevel level, double xCoord, double yCoord, double zCoord, SpriteSet spriteSet, double xd, double yd, double zd) {
 
         super(level, xCoord, yCoord, zCoord, xd, yd, zd);
 
@@ -36,7 +36,11 @@ public class FadingFlowerParticle extends TextureSheetParticle {
     @Override
     public void tick() {
         super.tick();
-        this.setSpriteFromAge(this.sprites);
+        randomlyAnimate();
+    }
+
+    private void randomlyAnimate() {
+        setSprite(sprites.get(Utils.random));
     }
 
     @Override
@@ -55,7 +59,7 @@ public class FadingFlowerParticle extends TextureSheetParticle {
         public Particle createParticle(SimpleParticleType particleType, ClientLevel level,
                                        double x, double y, double z,
                                        double dx, double dy, double dz) {
-            return new FadingFlowerParticle(level, x, y, z, this.sprites, dx, dy, dz);
+            return new FlowerParticle(level, x, y, z, this.sprites, dx, dy, dz);
         }
     }
 

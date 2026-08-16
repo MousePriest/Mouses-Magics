@@ -28,5 +28,5 @@ public class MMParticleRegistries {
      */
 
     public static final Supplier<SimpleParticleType> FADING_FLOWER_PARTICLE = PARTICLE_TYPES.register("fading_flower", () -> new SimpleParticleType(false));
-
+    public static final Supplier<SimpleParticleType> FLOWER_PARTICLE = PARTICLE_TYPES.register("flower", () -> new SimpleParticleType(false));
 }

@@ -1,6 +1,9 @@
 {
   "textures": [
+    "mousesmagics:fading_flower_2",
     "mousesmagics:fading_flower_1",
-    "mousesmagics:fading_flower_2"
+    "mousesmagics:fading_flower_2",
+    "mousesmagics:fading_flower_3",
+    "mousesmagics:fading_flower_4"
   ]
 }

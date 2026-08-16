@@ -7,6 +7,7 @@ import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonBurstRenderer;
 import com.mouse.mousesmagics.entity.spells.floral_spear.FloralSpearRenderer;
 import com.mouse.mousesmagics.entity.spells.petal.PetalRenderer;
 import com.mouse.mousesmagics.particle.FadingFlowerParticle;
+import com.mouse.mousesmagics.particle.FlowerParticle;
 import com.mouse.mousesmagics.registries.MMEntityRegistries;
 import com.mouse.mousesmagics.registries.MMParticleRegistries;
 import com.mouse.mousesmagics.render.MMChargeSpellLayer;
@@ -61,5 +62,6 @@ public class MMClientSetup {
     @SubscribeEvent
     public static void registerParticles(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(MMParticleRegistries.FADING_FLOWER_PARTICLE.get(), FadingFlowerParticle.Provider::new);
+        event.registerSpriteSet(MMParticleRegistries.FLOWER_PARTICLE.get(), FlowerParticle.Provider::new);
     }
 }
