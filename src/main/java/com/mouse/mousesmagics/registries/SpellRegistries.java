@@ -2,8 +2,8 @@ package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.spells.dew.BlissSpell;
-import com.mouse.mousesmagics.spells.dew.DewArrowSpell;
 import com.mouse.mousesmagics.spells.dew.FloralSpearSpell;
+import com.mouse.mousesmagics.spells.dew.PetalOnTheWindSpell;
 import com.mouse.mousesmagics.spells.ender.DragonBurstSpell;
 import com.mouse.mousesmagics.spells.dew.PetalSpell;
 import com.mouse.mousesmagics.spells.evocation.defenestration.DefenestrationSpell;
@@ -33,8 +33,8 @@ public class SpellRegistries {
     //Floral Spear
     public static final Supplier<AbstractSpell> FLORAL_SPEAR = registerSpell(new FloralSpearSpell());
 
-    //Dew Arrow
-    public static final Supplier<AbstractSpell> DEW_ARROW = registerSpell(new DewArrowSpell());
+    //Petal On The Wind
+    public static final Supplier<AbstractSpell> PETAL_ON_THE_WIND = registerSpell(new PetalOnTheWindSpell());
 
     //Symphony Of Sorrow - Ult - Consumes your garden - BASIC: Call a beam of dew down - WEAVER: Summon a giant web of light between all of your beacons - MISTED: Summons a giant hand formed of mist, and a horde of souls - BLOOMING: Summon a shifting, galactic constellation of petals above your head, then coat everything around you with a defense lowering buff.
 

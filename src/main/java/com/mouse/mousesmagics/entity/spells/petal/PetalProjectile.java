@@ -3,6 +3,7 @@ package com.mouse.mousesmagics.entity.spells.petal;
 import com.mouse.mousesmagics.registries.MMEffectRegisteries;
 import com.mouse.mousesmagics.registries.MMEntityRegistries;
 import com.mouse.mousesmagics.registries.SpellRegistries;
+import com.mouse.mousesmagics.utils.MMParticleHelper;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.damage.DamageSources;
@@ -58,7 +59,7 @@ public class PetalProjectile extends AbstractMagicProjectile implements GeoEntit
 
 
     public void impactParticles(double x, double y, double z) {
-        MagicManager.spawnParticles(level(), ParticleTypes.CHERRY_LEAVES, x, y, z, 5, .1, .1, .1, .25, true);
+        MagicManager.spawnParticles(level(), MMParticleHelper.FLOWER, x, y, z, 10, .1, .1, .1, .3, true);
     }
 
     public float getSpeed() {

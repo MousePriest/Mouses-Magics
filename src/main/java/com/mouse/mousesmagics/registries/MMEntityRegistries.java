@@ -2,7 +2,6 @@ package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.entity.spells.defenestration.DefenestrationProjectile;
-import com.mouse.mousesmagics.entity.spells.dew_arrow.DewArrowProjectile;
 import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonBurstProjectile;
 import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonField;
 import com.mouse.mousesmagics.entity.spells.floral_spear.FloralSpearProjectile;
@@ -34,12 +33,6 @@ public class MMEntityRegistries {
                     .sized(.5f, .5f)
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "petal").toString()));
-
-    public static final DeferredHolder<EntityType<?>, EntityType<DewArrowProjectile>> DEW_ARROW_PROJECTILE =
-            ENTITIES.register("dew_arrow", () -> EntityType.Builder.<DewArrowProjectile>of(DewArrowProjectile::new, MobCategory.MISC)
-                    .sized(.5f, .5f)
-                    .clientTrackingRange(64)
-                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "dew_arrow").toString()));
 
     public static final DeferredHolder<EntityType<?>, EntityType<DragonBurstProjectile>> DRAGON_BURST_PROJECTILE =
             ENTITIES.register("dragon_burst_projectile", () -> EntityType.Builder.<DragonBurstProjectile>of(DragonBurstProjectile::new, MobCategory.MISC)

@@ -2,7 +2,6 @@ package com.mouse.mousesmagics.setup;
 
 import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.entity.spells.defenestration.DefenestrationRenderer;
-import com.mouse.mousesmagics.entity.spells.dew_arrow.DewArrowRenderer;
 import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonBurstRenderer;
 import com.mouse.mousesmagics.entity.spells.floral_spear.FloralSpearRenderer;
 import com.mouse.mousesmagics.entity.spells.petal.PetalRenderer;
@@ -54,7 +53,6 @@ public class MMClientSetup {
         event.registerEntityRenderer(MMEntityRegistries.DEFENESTRATION_PROJECTILE.get(), DefenestrationRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.PETAL_PROJECTILE.get(), PetalRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.FLORAL_SPEAR_PROJECTILE.get(), FloralSpearRenderer::new);
-        event.registerEntityRenderer(MMEntityRegistries.DEW_ARROW_PROJECTILE.get(), DewArrowRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.DRAGON_BURST_PROJECTILE.get(), DragonBurstRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.DRAGON_FIELD.get(), NoopRenderer::new);
     }
