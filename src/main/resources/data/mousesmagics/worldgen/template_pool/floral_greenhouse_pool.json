@@ -1,0 +1,15 @@
+{
+  "name": "mousesmagics:floral_greenhouse_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "mousesmagics:floral_greenhouse",
+        "processors": "irons_spellbooks:weather_stone_blocks",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "mousesmagics:floral_greenhouse",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 864277539,
+    "spacing": 45,
+    "separation": 33,
+    "type": "minecraft:random_spread"
+  }
+}
