@@ -1,6 +1,7 @@
 package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
+import com.mouse.mousesmagics.block.MMBlocks;
 import com.mouse.mousesmagics.item.armour.blossom_bandit.BlossomBanditArmourItem;
 import com.mouse.mousesmagics.item.spellbooks.GardeningGuide;
 import com.mouse.mousesmagics.item.staffs.MMStaffTiers;
@@ -11,6 +12,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -27,11 +29,14 @@ public class MMItems {
     //*DEW*
 
     //Dew focus
-    public static final DeferredItem<Item> FOCUS = ITEMS.register("focus",
-            props -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> FRAGILE_DROPS = ITEMS.register("fragile_drops",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> SERENE_SEED = ITEMS.register("serene_seed",
+            () -> new ItemNameBlockItem(MMBlocks.DEW_CATCHER.get(), new Item.Properties()));
     //Dew staffs
-    public static final DeferredHolder<Item, Item> OVERGROWN_SICKLE = ITEMS.register("overgrownsickle", () ->
-            new StaffItem(ItemPropertiesHelper.equipment(1).attributes(ExtendedSwordItem.createAttributes(MMStaffTiers.OVERGROWN_SICKLE))));
+    public static final DeferredHolder<Item, Item> OVERGROWN_SICKLE = ITEMS.registerItem("overgrownsickle", props ->
+            new StaffItem(props.stacksTo(1).attributes(ExtendedSwordItem.createAttributes(MMStaffTiers.OVERGROWN_SICKLE))));
     //Dew books
     public static final DeferredHolder<Item, Item> GARDENING_GUIDE = ITEMS.register
             ("gardening_guide", GardeningGuide::new);
@@ -74,7 +79,7 @@ public class MMItems {
 
     //Reckless Vials
 
-    //*Artifacts*
+    //*ARTIFACTS*
 
     /* F______ H________
 

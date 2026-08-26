@@ -1,6 +1,7 @@
 package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
+import com.mouse.mousesmagics.entity.mobs.wizards.gardener.GardenerEntity;
 import com.mouse.mousesmagics.entity.spells.defenestration.DefenestrationProjectile;
 import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonBurstProjectile;
 import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonField;
@@ -22,33 +23,43 @@ public class MMEntityRegistries {
         ENTITIES.register(eventBus);
     }
 
+    //Spells
+
     public static final DeferredHolder<EntityType<?>, EntityType<DefenestrationProjectile>> DEFENESTRATION_PROJECTILE =
             ENTITIES.register("defenestration", () -> EntityType.Builder.<DefenestrationProjectile>of(DefenestrationProjectile::new, MobCategory.MISC)
                     .sized(.5f, .5f)
                     .clientTrackingRange(64)
-                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "defenestration").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "defenestration").toString()));
 
     public static final DeferredHolder<EntityType<?>, EntityType<PetalProjectile>> PETAL_PROJECTILE =
             ENTITIES.register("petal", () -> EntityType.Builder.<PetalProjectile>of(PetalProjectile::new, MobCategory.MISC)
                     .sized(.5f, .5f)
                     .clientTrackingRange(64)
-                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "petal").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "petal").toString()));
 
     public static final DeferredHolder<EntityType<?>, EntityType<DragonBurstProjectile>> DRAGON_BURST_PROJECTILE =
             ENTITIES.register("dragon_burst_projectile", () -> EntityType.Builder.<DragonBurstProjectile>of(DragonBurstProjectile::new, MobCategory.MISC)
                     .sized(.5f, .5f)
                     .clientTrackingRange(64)
-                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "dragon_burst_projectile").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "dragon_burst_projectile").toString()));
 
     public static final DeferredHolder<EntityType<?>, EntityType<DragonField>> DRAGON_FIELD =
             ENTITIES.register("dragon_field", () -> EntityType.Builder.<DragonField>of(DragonField::new, MobCategory.MISC)
                     .sized(4f, 1.2f)
                     .clientTrackingRange(64)
-                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "dragon_field").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "dragon_field").toString()));
 
     public static final DeferredHolder<EntityType<?>, EntityType<FloralSpearProjectile>> FLORAL_SPEAR_PROJECTILE =
             ENTITIES.register("floral_spear_projectile", () -> EntityType.Builder.<FloralSpearProjectile>of(FloralSpearProjectile::new, MobCategory.MISC)
                     .sized(.5f, .5f)
                     .clientTrackingRange(64)
-                    .build(ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "floral_spear_projectile").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "floral_spear_projectile").toString()));
+
+    //Mobs
+
+    public static final DeferredHolder<EntityType<?>, EntityType<GardenerEntity>> GARDENER =
+            ENTITIES.register("gardener", () -> EntityType.Builder.of(GardenerEntity::new, MobCategory.MONSTER)
+                    .sized(.6f, 1.8f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "gardener").toString()));
 }

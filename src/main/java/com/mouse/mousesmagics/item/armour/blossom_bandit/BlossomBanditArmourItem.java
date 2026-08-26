@@ -1,5 +1,6 @@
 package com.mouse.mousesmagics.item.armour.blossom_bandit;
 
+import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.entity.armour.BlossomBanditArmourModel;
 import com.mouse.mousesmagics.registries.MMAttributeRegistries;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
@@ -19,7 +20,7 @@ public class BlossomBanditArmourItem extends ImbuableChestplateArmorItem impleme
 
     @Override
     public ResourceLocation getCapeResourceLocation() {
-        return ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "textures/models/armor/pyromancer_cape.png");
+        return ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "textures/armour/blossom_bandit_cape.png");
     }
 
     @Override

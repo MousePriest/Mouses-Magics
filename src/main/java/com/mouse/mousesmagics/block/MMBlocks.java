@@ -1,10 +1,12 @@
 package com.mouse.mousesmagics.block;
 
 import com.mouse.mousesmagics.MousesMagics;
+import com.mouse.mousesmagics.block.plants.DewCatcherPlantBlock;
 import com.mouse.mousesmagics.registries.MMItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -13,13 +15,16 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class ModBlocks {
+public class MMBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(MousesMagics.MOD_ID);
 
     public static final DeferredBlock<Block> BLOSSOM_CHALK = registerBlock("blossom_chalk",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DRIPSTONE_BLOCK)));
+
+    public static final DeferredBlock<Block> DEW_CATCHER = registerBlock("dew_catcher",
+            () -> new DewCatcherPlantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

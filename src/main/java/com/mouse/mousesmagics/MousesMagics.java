@@ -1,11 +1,10 @@
 package com.mouse.mousesmagics;
 
-import com.mouse.mousesmagics.block.ModBlocks;
+import com.mouse.mousesmagics.block.MMBlocks;
 import com.mouse.mousesmagics.item.staffs.ceremonial_dagger.Ceremonial_DaggerRenderer;
 import com.mouse.mousesmagics.item.staffs.crystal_wrench.Crystal_WrenchRenderer;
 import com.mouse.mousesmagics.item.staffs.overgrown_sickle.OvergrownSickleRenderer;
 import com.mouse.mousesmagics.registries.*;
-import mod.azure.azurelib.common.animation.cache.AzIdentityRegistry;
 import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
@@ -49,7 +48,7 @@ public class MousesMagics {
 
         MMParticleRegistries.register(modEventBus);
 
-        ModBlocks.register(modEventBus);
+        MMBlocks.register(modEventBus);
 
         SpellRegistries.register(modEventBus);
     }

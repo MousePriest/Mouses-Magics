@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mousesmagics:item/focus"
+    "layer0": "mousesmagics:item/serene_seed"
   }
 }

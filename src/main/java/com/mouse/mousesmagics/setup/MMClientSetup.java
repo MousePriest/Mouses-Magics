@@ -1,6 +1,7 @@
 package com.mouse.mousesmagics.setup;
 
 import com.mouse.mousesmagics.MousesMagics;
+import com.mouse.mousesmagics.entity.mobs.wizards.gardener.GardenerRenderer;
 import com.mouse.mousesmagics.entity.spells.defenestration.DefenestrationRenderer;
 import com.mouse.mousesmagics.entity.spells.dragon_burst.DragonBurstRenderer;
 import com.mouse.mousesmagics.entity.spells.floral_spear.FloralSpearRenderer;
@@ -50,6 +51,7 @@ public class MMClientSetup {
 
     @SubscribeEvent
     public static void rendererRegister(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(MMEntityRegistries.GARDENER.get(), GardenerRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.DEFENESTRATION_PROJECTILE.get(), DefenestrationRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.PETAL_PROJECTILE.get(), PetalRenderer::new);
         event.registerEntityRenderer(MMEntityRegistries.FLORAL_SPEAR_PROJECTILE.get(), FloralSpearRenderer::new);

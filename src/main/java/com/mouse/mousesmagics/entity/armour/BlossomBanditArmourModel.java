@@ -1,5 +1,6 @@
 package com.mouse.mousesmagics.entity.armour;
 
+import com.mouse.mousesmagics.MousesMagics;
 import com.mouse.mousesmagics.item.armour.blossom_bandit.BlossomBanditArmourItem;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
 
@@ -15,12 +16,12 @@ public class BlossomBanditArmourModel extends GeoModel<BlossomBanditArmourItem> 
 
     @Override
     public ResourceLocation getModelResource(BlossomBanditArmourItem object) {
-        return ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "geo/pyromancer_armor.geo.json");
+        return ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "geo/blossom_bandit.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(BlossomBanditArmourItem object) {
-        return ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "textures/models/armor/pyromancer.png");
+        return ResourceLocation.fromNamespaceAndPath(MousesMagics.MOD_ID, "textures/armour/blossom_bandit.png");
     }
 
     @Override

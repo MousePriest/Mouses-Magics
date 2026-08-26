@@ -1,7 +1,7 @@
 package com.mouse.mousesmagics.registries;
 
 import com.mouse.mousesmagics.MousesMagics;
-import com.mouse.mousesmagics.block.ModBlocks;
+import com.mouse.mousesmagics.block.MMBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,9 +21,9 @@ public class MMCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         //Focuses
                         output.accept(MMItems.BOTTLE_OF_CURSES);
-                        output.accept(MMItems.FOCUS);
+                        output.accept(MMItems.FRAGILE_DROPS);
                         //Blocks
-                        output.accept(ModBlocks.BLOSSOM_CHALK);
+                        output.accept(MMBlocks.BLOSSOM_CHALK);
                         //Misc
                         output.accept(MMItems.ICE_LOLLY);
                         //Staves

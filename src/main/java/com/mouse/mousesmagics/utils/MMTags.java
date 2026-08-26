@@ -2,7 +2,6 @@ package com.mouse.mousesmagics.utils;
 
 import com.mouse.mousesmagics.MousesMagics;
 
-import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
